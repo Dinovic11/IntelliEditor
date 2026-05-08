@@ -10,8 +10,13 @@ if(MINGW)
     set(CMAKE_C_COMPILER "gcc")
 endif()
 
-# Ajouter les répertoires include
-include_directories(include)
+# Ajout des répertoires include
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# Bibliothèque interne de l'éditeur
+add_library(gap_buffer STATIC src/editor/gap_buffer.c)
 
 # exécutable de test
-add_executable(test_main src/main.c)
+add_executable(main src/main.c)
+
+target_link_libraries(main PRIVATE gap_buffer)
