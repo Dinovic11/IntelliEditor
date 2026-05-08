@@ -41,29 +41,21 @@ typedef enum {
 
 /* Représente UNE règle métier chargée depuis un fichier JSON */
 typedef struct {
-    char id[16];              /* ex: "R001" */
-    char category[32];        /* structure, style, longueur, ... */
-    char description[256];    /* message lisible par l'utilisateur */
-
-    RuleSeverity severity;    /* importance académique */
-    RuleCheckType check_type; /* type de vérification */
-
-    char *parameter;          /* paramètre brut (JSON) */
-    char *target_section;     /* section ciblée (optionnel) */
-
+    char id[32];
+    char category[32];
+    char description[256];
+    int severity;
+    int check_type;
+    char *parameter;
+    char *target_section;
 } Rule;
 
 
 /* Résultat de l'évaluation d'une règle */
 typedef struct {
-    const Rule *rule;         /* règle évaluée (non possédée) */
-    RuleStatus status;        /* OK / WARNING / ERROR / PENDING */
-
-    char message[256];        /* message explicatif */
-
-    int start_offset;         /* position dans le document */
-    int end_offset;
-
+    const Rule *rule;   /* règle évaluée */
+    int passed;
+    char message[256];
 } RuleResult;
 
 
@@ -82,11 +74,9 @@ typedef struct {
 typedef struct {
     RuleResult *results;
     size_t count;
-
-    size_t ok_count;
-    size_t warning_count;
-    size_t error_count;
-
+    size_t errors;
+    size_t warnings;
+    size_t infos;
 } RuleReport;
 
 

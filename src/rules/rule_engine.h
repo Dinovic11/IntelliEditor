@@ -8,24 +8,8 @@
  * Résultat d'une règle après évaluation
  * ============================================================
  */
-typedef struct {
-    const Rule *rule;        /* règle évaluée */
-    int passed;              /* 1 = respectée, 0 = violée */
-    char message[256];       /* message explicatif */
-} RuleResult;
 
-/* ============================================================
- * Rapport global d'analyse
- * ============================================================
- */
-typedef struct {
-    RuleResult *results;     /* tableau des résultats */
-    size_t count;            /* nombre de résultats */
-    size_t errors;
-    size_t warnings;
-    size_t infos;
-} RuleReport;
-
+ 
 /* ============================================================
  * Contexte du document analysé
  * (fourni par Dev A / Dev B)

@@ -1,0 +1,32 @@
+{
+    "meta": {
+        "document_type": "Document de test",
+        "version": "1.0"
+    },
+    "rules": [
+        {
+            "id": "R001",
+            "category": "Structure",
+            "description": "La section INTRODUCTION doit être présente",
+            "severity": "error",
+            "check_type": "section_exists",
+            "target_section": "INTRODUCTION"
+        },
+        {
+            "id": "R002",
+            "category": "Structure",
+            "description": "La section CONCLUSION doit être présente",
+            "severity": "error",
+            "check_type": "section_exists",
+            "target_section": "CONCLUSION"
+        },
+        {
+            "id": "R003",
+            "category": "Texte",
+            "description": "Le document doit contenir au moins 10 mots",
+            "severity": "warning",
+            "check_type": "word_count_min",
+            "parameter": "10"
+        }
+    ]
+}

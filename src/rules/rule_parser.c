@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "cJSON.h"
+#include "cJSON/cJSON.h"
+#define cJSON_IsString(item) ((item) != NULL && (item)->type == cJSON_String)
+#define cJSON_IsArray(item) ((item) != NULL && (item)->type == cJSON_Array)
 
 /* ------------------------------------------------------------
  * Utilitaire : lire un fichier entier en mémoire
