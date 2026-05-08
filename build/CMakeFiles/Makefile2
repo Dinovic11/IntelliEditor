@@ -63,11 +63,13 @@ CMAKE_BINARY_DIR = C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build
 
 # The main recursive "all" target.
 all: CMakeFiles/gap_buffer.dir/all
+all: CMakeFiles/undo_redo.dir/all
 all: CMakeFiles/main.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/gap_buffer.dir/codegen
+codegen: CMakeFiles/undo_redo.dir/codegen
 codegen: CMakeFiles/main.dir/codegen
 .PHONY : codegen
 
@@ -77,6 +79,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/gap_buffer.dir/clean
+clean: CMakeFiles/undo_redo.dir/clean
 clean: CMakeFiles/main.dir/clean
 .PHONY : clean
 
@@ -113,10 +116,43 @@ CMakeFiles/gap_buffer.dir/clean:
 .PHONY : CMakeFiles/gap_buffer.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/undo_redo.dir
+
+# All Build rule for target.
+CMakeFiles/undo_redo.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=5,6 "Built target undo_redo"
+.PHONY : CMakeFiles/undo_redo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/undo_redo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/undo_redo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 0
+.PHONY : CMakeFiles/undo_redo.dir/rule
+
+# Convenience name for target.
+undo_redo: CMakeFiles/undo_redo.dir/rule
+.PHONY : undo_redo
+
+# codegen rule for target.
+CMakeFiles/undo_redo.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=5,6 "Finished codegen for target undo_redo"
+.PHONY : CMakeFiles/undo_redo.dir/codegen
+
+# clean rule for target.
+CMakeFiles/undo_redo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/clean
+.PHONY : CMakeFiles/undo_redo.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
 CMakeFiles/main.dir/all: CMakeFiles/gap_buffer.dir/all
+CMakeFiles/main.dir/all: CMakeFiles/undo_redo.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=3,4 "Built target main"
@@ -124,7 +160,7 @@ CMakeFiles/main.dir/all: CMakeFiles/gap_buffer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule

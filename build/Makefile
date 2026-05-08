@@ -129,6 +129,19 @@ gap_buffer/fast:
 .PHONY : gap_buffer/fast
 
 #=============================================================================
+# Target rules for targets named undo_redo
+
+# Build rule for target.
+undo_redo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 undo_redo
+.PHONY : undo_redo
+
+# fast build rule for target.
+undo_redo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/build
+.PHONY : undo_redo/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -165,6 +178,30 @@ src/editor/gap_buffer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\gap_buffer.dir\build.make CMakeFiles/gap_buffer.dir/src/editor/gap_buffer.c.s
 .PHONY : src/editor/gap_buffer.c.s
 
+src/editor/undo_redo.obj: src/editor/undo_redo.c.obj
+.PHONY : src/editor/undo_redo.obj
+
+# target to build an object file
+src/editor/undo_redo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/src/editor/undo_redo.c.obj
+.PHONY : src/editor/undo_redo.c.obj
+
+src/editor/undo_redo.i: src/editor/undo_redo.c.i
+.PHONY : src/editor/undo_redo.i
+
+# target to preprocess a source file
+src/editor/undo_redo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/src/editor/undo_redo.c.i
+.PHONY : src/editor/undo_redo.c.i
+
+src/editor/undo_redo.s: src/editor/undo_redo.c.s
+.PHONY : src/editor/undo_redo.s
+
+# target to generate assembly for a file
+src/editor/undo_redo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/src/editor/undo_redo.c.s
+.PHONY : src/editor/undo_redo.c.s
+
 src/main.obj: src/main.c.obj
 .PHONY : src/main.obj
 
@@ -199,9 +236,13 @@ help:
 	@echo ... rebuild_cache
 	@echo ... gap_buffer
 	@echo ... main
+	@echo ... undo_redo
 	@echo ... src/editor/gap_buffer.obj
 	@echo ... src/editor/gap_buffer.i
 	@echo ... src/editor/gap_buffer.s
+	@echo ... src/editor/undo_redo.obj
+	@echo ... src/editor/undo_redo.i
+	@echo ... src/editor/undo_redo.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

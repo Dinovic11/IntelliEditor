@@ -148,6 +148,32 @@ bool gap_buffer_delete(GapBuffer *buffer, size_t count) {
     return true;
 }
 
+bool gap_buffer_set_text(GapBuffer *buffer, const char *text) {
+    if (!buffer || !text) {
+        return false;
+    }
+
+    size_t length = strlen(text);
+    size_t new_capacity = 64;
+    while (new_capacity < length * 2 + 1) {
+        new_capacity *= 2;
+    }
+
+    char *new_data = malloc(new_capacity);
+    if (!new_data) {
+        return false;
+    }
+
+    memcpy(new_data, text, length);
+    free(buffer->data);
+
+    buffer->data = new_data;
+    buffer->capacity = new_capacity;
+    buffer->gap_start = length;
+    buffer->gap_end = new_capacity;
+    return true;
+}
+
 size_t gap_buffer_to_string(const GapBuffer *buffer, char *dest, size_t dest_size) {
     if (!buffer || !dest || dest_size == 0) {
         return 0;

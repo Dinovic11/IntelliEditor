@@ -18,6 +18,8 @@ bool gap_buffer_insert(GapBuffer *buffer, const char *text, size_t length);
 bool gap_buffer_insert_char(GapBuffer *buffer, char c);
 bool gap_buffer_delete(GapBuffer *buffer, size_t count);
 
+bool gap_buffer_set_text(GapBuffer *buffer, const char *text);
+
 size_t gap_buffer_to_string(const GapBuffer *buffer, char *dest, size_t dest_size);
 
 #endif
