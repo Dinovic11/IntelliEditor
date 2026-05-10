@@ -1,5 +1,4 @@
 # IntelliEditor
-Logiciel de traitement de texte intelligent en C (Projet C Avancé), fonctionnant entièrement hors ligne sous Windows.
 
 ## Contexte
 Projet académique – C Avancé (L3 Génie Logiciel)  
