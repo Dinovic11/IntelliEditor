@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libundo_redo.a CMakeFiles/undo_redo.dir/src/editor/undo_redo.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libundo_redo.a

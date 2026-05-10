@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libgap_buffer.a CMakeFiles/gap_buffer.dir/src/editor/gap_buffer.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libgap_buffer.a

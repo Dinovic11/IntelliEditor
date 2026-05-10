@@ -1,0 +1,5 @@
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/gap_buffer.dir
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/undo_redo.dir
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/main.dir
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/edit_cache.dir
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/rebuild_cache.dir
