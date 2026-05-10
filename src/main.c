@@ -2,6 +2,7 @@
 #include <string.h>
 #include "gap_buffer.h"
 #include "undo_redo.h"
+#include "encoding.h"
 
 int main(void) {
     GapBuffer *buffer = gap_buffer_create(64);
@@ -38,6 +39,21 @@ int main(void) {
     printf("Contenu : %s\n", output);
     printf("Longueur : %zu, Curseur : %zu\n",
            gap_buffer_length(buffer), gap_buffer_cursor(buffer));
+
+    const char *source = "Français — UTF-8 test ☺";
+    wchar_t *wide = utf8_to_utf16_alloc(source);
+    if (wide) {
+        char *roundtrip = utf16_to_utf8_alloc(wide);
+        if (roundtrip) {
+            printf("UTF-8->UTF-16->UTF-8 : %s\n", roundtrip);
+            free(roundtrip);
+        } else {
+            fprintf(stderr, "Erreur : conversion UTF-16 vers UTF-8 échouée\n");
+        }
+        free(wide);
+    } else {
+        fprintf(stderr, "Erreur : conversion UTF-8 vers UTF-16 échouée\n");
+    }
 
     if (undo_redo_can_undo(history)) {
         undo_redo_undo(history, buffer);
