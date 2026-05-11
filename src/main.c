@@ -3,6 +3,7 @@
 #include "gap_buffer.h"
 #include "undo_redo.h"
 #include "encoding.h"
+#include "config.h"
 
 int main(void) {
     GapBuffer *buffer = gap_buffer_create(64);
@@ -53,6 +54,21 @@ int main(void) {
         free(wide);
     } else {
         fprintf(stderr, "Erreur : conversion UTF-8 vers UTF-16 échouée\n");
+    }
+
+    Config *config = config_create();
+    if (config) {
+        config_set(config, "General", "language", "fr_FR");
+        config_set(config, "General", "theme", "light");
+        config_set(config, "Editor", "font_name", "Consolas");
+        config_set(config, "Editor", "font_size", "12");
+        if (config_save(config, "config.ini")) {
+            printf("Configuration sauvegardée dans config.ini\n");
+        }
+
+        config_destroy(config);
+    } else {
+        fprintf(stderr, "Erreur : impossible de créer la configuration\n");
     }
 
     if (undo_redo_can_undo(history)) {
