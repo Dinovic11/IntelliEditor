@@ -174,6 +174,18 @@ bool gap_buffer_set_text(GapBuffer *buffer, const char *text) {
     return true;
 }
 
+char gap_buffer_get_at(const GapBuffer *buffer, size_t position) {
+    if (!buffer || position >= gap_buffer_length(buffer)) {
+        return '\0';
+    }
+
+    if (position < buffer->gap_start) {
+        return buffer->data[position];
+    } else {
+        return buffer->data[position + (buffer->gap_end - buffer->gap_start)];
+    }
+}
+
 size_t gap_buffer_to_string(const GapBuffer *buffer, char *dest, size_t dest_size) {
     if (!buffer || !dest || dest_size == 0) {
         return 0;

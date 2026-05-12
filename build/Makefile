@@ -155,6 +155,19 @@ formatter/fast:
 .PHONY : formatter/fast
 
 #=============================================================================
+# Target rules for targets named exporter
+
+# Build rule for target.
+exporter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 exporter
+.PHONY : exporter
+
+# fast build rule for target.
+exporter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exporter.dir\build.make CMakeFiles/exporter.dir/build
+.PHONY : exporter/fast
+
+#=============================================================================
 # Target rules for targets named encoding
 
 # Build rule for target.
@@ -192,6 +205,30 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+src/editor/exporter.obj: src/editor/exporter.c.obj
+.PHONY : src/editor/exporter.obj
+
+# target to build an object file
+src/editor/exporter.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exporter.dir\build.make CMakeFiles/exporter.dir/src/editor/exporter.c.obj
+.PHONY : src/editor/exporter.c.obj
+
+src/editor/exporter.i: src/editor/exporter.c.i
+.PHONY : src/editor/exporter.i
+
+# target to preprocess a source file
+src/editor/exporter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exporter.dir\build.make CMakeFiles/exporter.dir/src/editor/exporter.c.i
+.PHONY : src/editor/exporter.c.i
+
+src/editor/exporter.s: src/editor/exporter.c.s
+.PHONY : src/editor/exporter.s
+
+# target to generate assembly for a file
+src/editor/exporter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exporter.dir\build.make CMakeFiles/exporter.dir/src/editor/exporter.c.s
+.PHONY : src/editor/exporter.c.s
 
 src/editor/formatter.obj: src/editor/formatter.c.obj
 .PHONY : src/editor/formatter.obj
@@ -347,10 +384,14 @@ help:
 	@echo ... rebuild_cache
 	@echo ... config
 	@echo ... encoding
+	@echo ... exporter
 	@echo ... formatter
 	@echo ... gap_buffer
 	@echo ... main
 	@echo ... undo_redo
+	@echo ... src/editor/exporter.obj
+	@echo ... src/editor/exporter.i
+	@echo ... src/editor/exporter.s
 	@echo ... src/editor/formatter.obj
 	@echo ... src/editor/formatter.i
 	@echo ... src/editor/formatter.s

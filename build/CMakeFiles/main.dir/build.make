@@ -98,6 +98,7 @@ main.exe: CMakeFiles/main.dir/build.make
 main.exe: libgap_buffer.a
 main.exe: libundo_redo.a
 main.exe: libformatter.a
+main.exe: libexporter.a
 main.exe: libencoding.a
 main.exe: libconfig.a
 main.exe: CMakeFiles/main.dir/linkLibs.rsp
