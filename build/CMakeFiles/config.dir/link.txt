@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libconfig.a CMakeFiles/config.dir/src/utils/config.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libconfig.a

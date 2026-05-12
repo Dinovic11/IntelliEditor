@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libformatter.a CMakeFiles/formatter.dir/src/editor/formatter.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libformatter.a

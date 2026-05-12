@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libencoding.a CMakeFiles/encoding.dir/src/utils/encoding.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libencoding.a

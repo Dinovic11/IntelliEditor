@@ -16,10 +16,11 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 # Bibliothèque interne de l'éditeur
 add_library(gap_buffer STATIC src/editor/gap_buffer.c)
 add_library(undo_redo STATIC src/editor/undo_redo.c)
+add_library(formatter STATIC src/editor/formatter.c)
 add_library(encoding STATIC src/utils/encoding.c)
 add_library(config STATIC src/utils/config.c)
 
 # exécutable de test
 add_executable(main src/main.c)
 
-target_link_libraries(main PRIVATE gap_buffer undo_redo encoding config)
+target_link_libraries(main PRIVATE gap_buffer undo_redo formatter encoding config)

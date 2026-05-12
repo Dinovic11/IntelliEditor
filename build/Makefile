@@ -142,6 +142,45 @@ undo_redo/fast:
 .PHONY : undo_redo/fast
 
 #=============================================================================
+# Target rules for targets named formatter
+
+# Build rule for target.
+formatter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 formatter
+.PHONY : formatter
+
+# fast build rule for target.
+formatter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\formatter.dir\build.make CMakeFiles/formatter.dir/build
+.PHONY : formatter/fast
+
+#=============================================================================
+# Target rules for targets named encoding
+
+# Build rule for target.
+encoding: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 encoding
+.PHONY : encoding
+
+# fast build rule for target.
+encoding/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\encoding.dir\build.make CMakeFiles/encoding.dir/build
+.PHONY : encoding/fast
+
+#=============================================================================
+# Target rules for targets named config
+
+# Build rule for target.
+config: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 config
+.PHONY : config
+
+# fast build rule for target.
+config/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\config.dir\build.make CMakeFiles/config.dir/build
+.PHONY : config/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -153,6 +192,30 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+src/editor/formatter.obj: src/editor/formatter.c.obj
+.PHONY : src/editor/formatter.obj
+
+# target to build an object file
+src/editor/formatter.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\formatter.dir\build.make CMakeFiles/formatter.dir/src/editor/formatter.c.obj
+.PHONY : src/editor/formatter.c.obj
+
+src/editor/formatter.i: src/editor/formatter.c.i
+.PHONY : src/editor/formatter.i
+
+# target to preprocess a source file
+src/editor/formatter.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\formatter.dir\build.make CMakeFiles/formatter.dir/src/editor/formatter.c.i
+.PHONY : src/editor/formatter.c.i
+
+src/editor/formatter.s: src/editor/formatter.c.s
+.PHONY : src/editor/formatter.s
+
+# target to generate assembly for a file
+src/editor/formatter.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\formatter.dir\build.make CMakeFiles/formatter.dir/src/editor/formatter.c.s
+.PHONY : src/editor/formatter.c.s
 
 src/editor/gap_buffer.obj: src/editor/gap_buffer.c.obj
 .PHONY : src/editor/gap_buffer.obj
@@ -226,6 +289,54 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/utils/config.obj: src/utils/config.c.obj
+.PHONY : src/utils/config.obj
+
+# target to build an object file
+src/utils/config.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\config.dir\build.make CMakeFiles/config.dir/src/utils/config.c.obj
+.PHONY : src/utils/config.c.obj
+
+src/utils/config.i: src/utils/config.c.i
+.PHONY : src/utils/config.i
+
+# target to preprocess a source file
+src/utils/config.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\config.dir\build.make CMakeFiles/config.dir/src/utils/config.c.i
+.PHONY : src/utils/config.c.i
+
+src/utils/config.s: src/utils/config.c.s
+.PHONY : src/utils/config.s
+
+# target to generate assembly for a file
+src/utils/config.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\config.dir\build.make CMakeFiles/config.dir/src/utils/config.c.s
+.PHONY : src/utils/config.c.s
+
+src/utils/encoding.obj: src/utils/encoding.c.obj
+.PHONY : src/utils/encoding.obj
+
+# target to build an object file
+src/utils/encoding.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\encoding.dir\build.make CMakeFiles/encoding.dir/src/utils/encoding.c.obj
+.PHONY : src/utils/encoding.c.obj
+
+src/utils/encoding.i: src/utils/encoding.c.i
+.PHONY : src/utils/encoding.i
+
+# target to preprocess a source file
+src/utils/encoding.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\encoding.dir\build.make CMakeFiles/encoding.dir/src/utils/encoding.c.i
+.PHONY : src/utils/encoding.c.i
+
+src/utils/encoding.s: src/utils/encoding.c.s
+.PHONY : src/utils/encoding.s
+
+# target to generate assembly for a file
+src/utils/encoding.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\encoding.dir\build.make CMakeFiles/encoding.dir/src/utils/encoding.c.s
+.PHONY : src/utils/encoding.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -234,9 +345,15 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... config
+	@echo ... encoding
+	@echo ... formatter
 	@echo ... gap_buffer
 	@echo ... main
 	@echo ... undo_redo
+	@echo ... src/editor/formatter.obj
+	@echo ... src/editor/formatter.i
+	@echo ... src/editor/formatter.s
 	@echo ... src/editor/gap_buffer.obj
 	@echo ... src/editor/gap_buffer.i
 	@echo ... src/editor/gap_buffer.s
@@ -246,6 +363,12 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/utils/config.obj
+	@echo ... src/utils/config.i
+	@echo ... src/utils/config.s
+	@echo ... src/utils/encoding.obj
+	@echo ... src/utils/encoding.i
+	@echo ... src/utils/encoding.s
 .PHONY : help
 
 

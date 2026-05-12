@@ -2,6 +2,7 @@
 #include <string.h>
 #include "gap_buffer.h"
 #include "undo_redo.h"
+#include "formatter.h"
 #include "encoding.h"
 #include "config.h"
 
@@ -54,6 +55,23 @@ int main(void) {
         free(wide);
     } else {
         fprintf(stderr, "Erreur : conversion UTF-8 vers UTF-16 échouée\n");
+    }
+
+    Formatter *formatter = formatter_create();
+    if (formatter) {
+        formatter_set_style(formatter, 0, 6, STYLE_BOLD);       
+        formatter_set_style(formatter, 6, 1, STYLE_UNDERLINE);  
+        formatter_set_style(formatter, 7, 6, STYLE_ITALIC);     
+        formatter_set_style(formatter, 0, 13, STYLE_HEADING_1); 
+
+        char *styled = formatter_render_markup(formatter, output);
+        if (styled) {
+            printf("Rendu style : %s\n", styled);
+            free(styled);
+        }
+        formatter_destroy(formatter);
+    } else {
+        fprintf(stderr, "Erreur : impossible de créer le formatter\n");
     }
 
     Config *config = config_create();
