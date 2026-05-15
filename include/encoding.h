@@ -12,7 +12,5 @@ wchar_t *utf8_to_utf16_alloc(const char *utf8);
 char *utf16_to_utf8_alloc(const wchar_t *utf16);
 
 bool enable_utf8_console(void);
-void console_print(const char *text);
-void console_printf(const char *format, ...);
 
 #endif

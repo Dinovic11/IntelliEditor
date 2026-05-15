@@ -7,7 +7,6 @@
 #include "exporter.h"
 #include "encoding.h"
 #include "config.h"
-#include "search_replace.h"
 
 int main(void) {
     enable_utf8_console();
@@ -43,8 +42,8 @@ int main(void) {
 
     char output[128];
     gap_buffer_to_string(buffer, output, sizeof(output));
-    console_printf("Contenu : %s\n", output);
-    console_printf("Longueur : %zu, Curseur : %zu\n",
+    printf("Contenu : %s\n", output);
+    printf("Longueur : %zu, Curseur : %zu\n",
            gap_buffer_length(buffer), gap_buffer_cursor(buffer));
 
     const char *source = "Français — UTF-8 test ☺";
@@ -52,7 +51,7 @@ int main(void) {
     if (wide) {
         char *roundtrip = utf16_to_utf8_alloc(wide);
         if (roundtrip) {
-            console_printf("UTF-8->UTF-16->UTF-8 : %s\n", roundtrip);
+            printf("UTF-8->UTF-16->UTF-8 : %s\n", roundtrip);
             free(roundtrip);
         } else {
             fprintf(stderr, "Erreur : conversion UTF-16 vers UTF-8 échouée\n");
@@ -71,15 +70,15 @@ int main(void) {
 
         char *styled = formatter_render_markup(formatter, output);
         if (styled) {
-            console_printf("Rendu style : %s\n", styled);
+            printf("Rendu style : %s\n", styled);
             if (exporter_save_text("document.txt", output)) {
-                console_printf("Export .txt réussi\n");
+                printf("Export .txt réussi\n");
             }
             if (exporter_save_rtf("document.rtf", output, formatter_get_styles(formatter), formatter_style_count(formatter))) {
-                console_printf("Export .rtf réussi\n");
+                printf("Export .rtf réussi\n");
             }
             if (exporter_save_ie("document.ie", output, formatter_get_styles(formatter), formatter_style_count(formatter))) {
-                console_printf("Export .ie réussi\n");
+                printf("Export .ie réussi\n");
             }
             free(styled);
         }
@@ -95,7 +94,7 @@ int main(void) {
         config_set(config, "Editor", "font_name", "Consolas");
         config_set(config, "Editor", "font_size", "12");
         if (config_save(config, "config.ini")) {
-            console_printf("Configuration sauvegardée dans config.ini\n");
+            printf("Configuration sauvegardée dans config.ini\n");
         }
 
         config_destroy(config);
@@ -106,33 +105,14 @@ int main(void) {
     if (undo_redo_can_undo(history)) {
         undo_redo_undo(history, buffer);
         gap_buffer_to_string(buffer, output, sizeof(output));
-        console_printf("Après undo : %s\n", output);
+        printf("Après undo : %s\n", output);
     }
 
     if (undo_redo_can_redo(history)) {
         undo_redo_redo(history, buffer);
         gap_buffer_to_string(buffer, output, sizeof(output));
-        console_printf("Après redo : %s\n", output);
+        printf("Après redo : %s\n", output);
     }
-
-    // --- Tests Recherche et Remplacement ---
-    console_printf("\n--- Test Recherche ---\n");
-    gap_buffer_set_text(buffer, "Le petit chat boit du lait. Un autre chat arrive.");
-    
-    size_t pos1 = search_find_next(buffer, "chat", 0);
-    console_printf("Premier 'chat' trouve a : %zu\n", pos1);
-
-    size_t pos2 = search_find_next(buffer, "chat", pos1 + 1);
-    console_printf("Deuxieme 'chat' trouve a : %zu\n", pos2);
-
-    size_t pos3 = search_find_prev(buffer, "chat", pos2 - 1);
-    console_printf("Précédent 'chat' (depuis %zu) trouvé a : %zu\n", pos2 - 1, pos3);
-
-    console_printf("\n--- Test Remplacement ---\n");
-    size_t replaced = search_replace_all(buffer, "chat", "chien");
-    gap_buffer_to_string(buffer, output, sizeof(output));
-    console_printf("Remplacements effectues : %zu\n", replaced);
-    console_printf("Resultat : %s\n", output);
 
     undo_redo_destroy(history);
     gap_buffer_destroy(buffer);

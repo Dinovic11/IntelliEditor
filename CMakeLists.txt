@@ -20,9 +20,8 @@ add_library(formatter STATIC src/editor/formatter.c)
 add_library(exporter STATIC src/editor/exporter.c)
 add_library(encoding STATIC src/utils/encoding.c)
 add_library(config STATIC src/utils/config.c)
-add_library(search_replace STATIC src/editor/search_replace.c)
 
 # exécutable de test
 add_executable(main src/main.c)
 
-target_link_libraries(main PRIVATE gap_buffer undo_redo formatter exporter encoding config search_replace)
+target_link_libraries(main PRIVATE gap_buffer undo_redo formatter exporter encoding config)

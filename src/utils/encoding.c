@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <windows.h>
-#include <stdio.h>
-#include <stdarg.h>
 #include "encoding.h"
 
 bool enable_utf8_console(void) {
@@ -124,28 +122,4 @@ char *utf16_to_utf8_alloc(const wchar_t *utf16) {
     }
 
     return buffer;
-}
-
-void console_print(const char *text) {
-    if (!text) return;
-    HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
-    DWORD mode;
-    if (GetConsoleMode(out, &mode)) {
-        wchar_t *wide = utf8_to_utf16_alloc(text);
-        if (wide) {
-            WriteConsoleW(out, wide, (DWORD)wcslen(wide), NULL, NULL);
-            free(wide);
-            return;
-        }
-    }
-    printf("%s", text);
-}
-
-void console_printf(const char *format, ...) {
-    char buffer[4096];
-    va_list args;
-    va_start(args, format);
-    vsnprintf(buffer, sizeof(buffer), format, args);
-    va_end(args);
-    console_print(buffer);
 }

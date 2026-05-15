@@ -285,15 +285,13 @@ CMakeFiles/encoding.dir/src/utils/encoding.c.obj: \
  C:/tools/msys64/mingw64/include/winsvc.h \
  C:/tools/msys64/mingw64/include/mcx.h \
  C:/tools/msys64/mingw64/include/imm.h \
- C:/tools/msys64/mingw64/include/stdio.h \
- C:/tools/msys64/mingw64/include/corecrt_stdio_config.h \
- C:/tools/msys64/mingw64/include/_mingw_off_t.h \
- C:/tools/msys64/mingw64/include/swprintf.inl \
- C:/tools/msys64/mingw64/include/sec_api/stdio_s.h \
  C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/encoding.h \
  C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stdbool.h \
  C:/tools/msys64/mingw64/include/wchar.h \
+ C:/tools/msys64/mingw64/include/corecrt_stdio_config.h \
  C:/tools/msys64/mingw64/include/corecrt_wconio.h \
  C:/tools/msys64/mingw64/include/sec_api/wconio_s.h \
+ C:/tools/msys64/mingw64/include/_mingw_off_t.h \
  C:/tools/msys64/mingw64/include/_mingw_stat64.h \
+ C:/tools/msys64/mingw64/include/swprintf.inl \
  C:/tools/msys64/mingw64/include/sec_api/wchar_s.h
