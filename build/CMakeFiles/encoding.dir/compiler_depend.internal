@@ -116,7 +116,6 @@ CMakeFiles/encoding.dir/src/utils/encoding.c.obj
  C:/tools/msys64/mingw64/include/rpcsal.h
  C:/tools/msys64/mingw64/include/sal.h
  C:/tools/msys64/mingw64/include/sdkddkver.h
- C:/tools/msys64/mingw64/include/sec_api/stdio_s.h
  C:/tools/msys64/mingw64/include/sec_api/stdlib_s.h
  C:/tools/msys64/mingw64/include/sec_api/stralign_s.h
  C:/tools/msys64/mingw64/include/sec_api/string_s.h
@@ -129,7 +128,6 @@ CMakeFiles/encoding.dir/src/utils/encoding.c.obj
  C:/tools/msys64/mingw64/include/specstrings.h
  C:/tools/msys64/mingw64/include/stdarg.h
  C:/tools/msys64/mingw64/include/stddef.h
- C:/tools/msys64/mingw64/include/stdio.h
  C:/tools/msys64/mingw64/include/stdlib.h
  C:/tools/msys64/mingw64/include/stralign.h
  C:/tools/msys64/mingw64/include/string.h

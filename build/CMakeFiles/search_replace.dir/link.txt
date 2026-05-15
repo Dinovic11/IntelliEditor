@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libsearch_replace.a CMakeFiles/search_replace.dir/src/editor/search_replace.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libsearch_replace.a

@@ -55,6 +55,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/undo_redo.dir/DependInfo.cmake"
   "CMakeFiles/formatter.dir/DependInfo.cmake"
   "CMakeFiles/exporter.dir/DependInfo.cmake"
+  "CMakeFiles/search_replace.dir/DependInfo.cmake"
   "CMakeFiles/encoding.dir/DependInfo.cmake"
   "CMakeFiles/config.dir/DependInfo.cmake"
   "CMakeFiles/main.dir/DependInfo.cmake"

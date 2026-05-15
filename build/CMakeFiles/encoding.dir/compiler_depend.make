@@ -115,7 +115,6 @@ CMakeFiles/encoding.dir/src/utils/encoding.c.obj: C:/Users/paisible/Work/Web/PER
   C:/tools/msys64/mingw64/include/rpcsal.h \
   C:/tools/msys64/mingw64/include/sal.h \
   C:/tools/msys64/mingw64/include/sdkddkver.h \
-  C:/tools/msys64/mingw64/include/sec_api/stdio_s.h \
   C:/tools/msys64/mingw64/include/sec_api/stdlib_s.h \
   C:/tools/msys64/mingw64/include/sec_api/stralign_s.h \
   C:/tools/msys64/mingw64/include/sec_api/string_s.h \
@@ -128,7 +127,6 @@ CMakeFiles/encoding.dir/src/utils/encoding.c.obj: C:/Users/paisible/Work/Web/PER
   C:/tools/msys64/mingw64/include/specstrings.h \
   C:/tools/msys64/mingw64/include/stdarg.h \
   C:/tools/msys64/mingw64/include/stddef.h \
-  C:/tools/msys64/mingw64/include/stdio.h \
   C:/tools/msys64/mingw64/include/stdlib.h \
   C:/tools/msys64/mingw64/include/stralign.h \
   C:/tools/msys64/mingw64/include/string.h \
@@ -341,7 +339,9 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/rdseedintrin.h
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/prfchiintrin.h:
 
-C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/pmmintrin.h:
+C:/tools/msys64/mingw64/include/stdlib.h:
+
+C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512dqintrin.h:
 
 C:/tools/msys64/mingw64/include/stdarg.h:
 
@@ -467,6 +467,8 @@ C:/tools/msys64/mingw64/include/corecrt_wstdlib.h:
 
 C:/tools/msys64/mingw64/include/pshpack2.h:
 
+C:/tools/msys64/mingw64/include/unknwnbase.h:
+
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/xmmintrin.h:
 
 C:/tools/msys64/mingw64/include/propidl.h:
@@ -505,10 +507,6 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx10_2copyint
 
 C:/tools/msys64/mingw64/include/handleapi.h:
 
-C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/popcntintrin.h:
-
-C:/tools/msys64/mingw64/include/consoleapi2.h:
-
 C:/tools/msys64/mingw64/include/timeapi.h:
 
 C:/tools/msys64/mingw64/include/sdkddkver.h:
@@ -532,10 +530,6 @@ C:/tools/msys64/mingw64/include/processthreadsapi.h:
 C:/tools/msys64/mingw64/include/_mingw_stdarg.h:
 
 C:/tools/msys64/mingw64/include/systemtopologyapi.h:
-
-C:/tools/msys64/mingw64/include/sec_api/stdio_s.h:
-
-C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/ia32intrin.h:
 
 C:/tools/msys64/mingw64/include/concurrencysal.h:
 
@@ -653,17 +647,9 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512fp16vlin
 
 C:/tools/msys64/mingw64/include/lzexpand.h:
 
-C:/tools/msys64/mingw64/include/unknwnbase.h:
-
-C:/tools/msys64/mingw64/include/stdio.h:
-
 C:/tools/msys64/mingw64/include/malloc.h:
 
 C:/tools/msys64/mingw64/include/winscard.h:
-
-C:/tools/msys64/mingw64/include/stdlib.h:
-
-C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512dqintrin.h:
 
 C:/tools/msys64/mingw64/include/string.h:
 
@@ -732,6 +718,10 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/wmmintrin.h:
 C:/tools/msys64/mingw64/include/windef.h:
 
 C:/tools/msys64/mingw64/include/winefs.h:
+
+C:/tools/msys64/mingw64/include/consoleapi2.h:
+
+C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/popcntintrin.h:
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512vbmi2vlintrin.h:
 
@@ -843,6 +833,8 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/cetintrin.h:
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/clwbintrin.h:
 
+C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/pmmintrin.h:
+
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/cmpccxaddintrin.h:
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/emmintrin.h:
@@ -860,6 +852,8 @@ C:/tools/msys64/mingw64/include/guiddef.h:
 C:/tools/msys64/mingw64/include/sal.h:
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/fxsrintrin.h:
+
+C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/ia32intrin.h:
 
 C:/tools/msys64/mingw64/include/apisetcconv.h:
 

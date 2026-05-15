@@ -7,6 +7,7 @@
 #include "exporter.h"
 #include "encoding.h"
 #include "config.h"
+#include "search_replace.h"
 
 int main(void) {
     enable_utf8_console();
@@ -112,6 +113,25 @@ int main(void) {
         undo_redo_redo(history, buffer);
         gap_buffer_to_string(buffer, output, sizeof(output));
         printf("Après redo : %s\n", output);
+    }
+
+    printf("\n--- Test Rechercher/Remplacer ---\n");
+    GapBuffer *search_buffer = gap_buffer_create(128);
+    if (search_buffer) {
+        gap_buffer_set_text(search_buffer, "Bonjour le monde, bonjour la vie");
+        gap_buffer_to_string(search_buffer, output, sizeof(output));
+        printf("Buffer initial : %s\n", output);
+        
+        size_t pos = search_find_next(search_buffer, "bonjour", 0);
+        if (pos != (size_t)-1) {
+            printf("Première occurrence de 'bonjour' à position : %zu\n", pos);
+        }
+        
+        size_t replaced = search_replace_all(search_buffer, "bonjour", "salut");
+        gap_buffer_to_string(search_buffer, output, sizeof(output));
+        printf("Après remplacement (x%zu) : %s\n", replaced, output);
+        
+        gap_buffer_destroy(search_buffer);
     }
 
     undo_redo_destroy(history);

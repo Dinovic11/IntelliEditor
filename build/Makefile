@@ -168,6 +168,19 @@ exporter/fast:
 .PHONY : exporter/fast
 
 #=============================================================================
+# Target rules for targets named search_replace
+
+# Build rule for target.
+search_replace: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 search_replace
+.PHONY : search_replace
+
+# fast build rule for target.
+search_replace/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\search_replace.dir\build.make CMakeFiles/search_replace.dir/build
+.PHONY : search_replace/fast
+
+#=============================================================================
 # Target rules for targets named encoding
 
 # Build rule for target.
@@ -277,6 +290,30 @@ src/editor/gap_buffer.s: src/editor/gap_buffer.c.s
 src/editor/gap_buffer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\gap_buffer.dir\build.make CMakeFiles/gap_buffer.dir/src/editor/gap_buffer.c.s
 .PHONY : src/editor/gap_buffer.c.s
+
+src/editor/search_replace.obj: src/editor/search_replace.c.obj
+.PHONY : src/editor/search_replace.obj
+
+# target to build an object file
+src/editor/search_replace.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\search_replace.dir\build.make CMakeFiles/search_replace.dir/src/editor/search_replace.c.obj
+.PHONY : src/editor/search_replace.c.obj
+
+src/editor/search_replace.i: src/editor/search_replace.c.i
+.PHONY : src/editor/search_replace.i
+
+# target to preprocess a source file
+src/editor/search_replace.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\search_replace.dir\build.make CMakeFiles/search_replace.dir/src/editor/search_replace.c.i
+.PHONY : src/editor/search_replace.c.i
+
+src/editor/search_replace.s: src/editor/search_replace.c.s
+.PHONY : src/editor/search_replace.s
+
+# target to generate assembly for a file
+src/editor/search_replace.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\search_replace.dir\build.make CMakeFiles/search_replace.dir/src/editor/search_replace.c.s
+.PHONY : src/editor/search_replace.c.s
 
 src/editor/undo_redo.obj: src/editor/undo_redo.c.obj
 .PHONY : src/editor/undo_redo.obj
@@ -388,6 +425,7 @@ help:
 	@echo ... formatter
 	@echo ... gap_buffer
 	@echo ... main
+	@echo ... search_replace
 	@echo ... undo_redo
 	@echo ... src/editor/exporter.obj
 	@echo ... src/editor/exporter.i
@@ -398,6 +436,9 @@ help:
 	@echo ... src/editor/gap_buffer.obj
 	@echo ... src/editor/gap_buffer.i
 	@echo ... src/editor/gap_buffer.s
+	@echo ... src/editor/search_replace.obj
+	@echo ... src/editor/search_replace.i
+	@echo ... src/editor/search_replace.s
 	@echo ... src/editor/undo_redo.obj
 	@echo ... src/editor/undo_redo.i
 	@echo ... src/editor/undo_redo.s

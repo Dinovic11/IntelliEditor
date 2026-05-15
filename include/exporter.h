@@ -16,4 +16,4 @@ bool exporter_save_rtf(const char *filename, const char *text, const TextStyleRa
 bool exporter_save_ie(const char *filename, const char *text, const TextStyleRange *styles, size_t style_count);
 bool exporter_save(const char *filename, const char *text, const TextStyleRange *styles, size_t style_count);
 
-#endif // INTELLIEDITOR_EXPORTER_H
+#endif 

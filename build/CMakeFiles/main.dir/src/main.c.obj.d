@@ -39,4 +39,5 @@ CMakeFiles/main.dir/src/main.c.obj: \
  C:/tools/msys64/mingw64/include/corecrt_wctype.h \
  C:/tools/msys64/mingw64/include/_mingw_stat64.h \
  C:/tools/msys64/mingw64/include/sec_api/wchar_s.h \
- C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/config.h
+ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/config.h \
+ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/search_replace.h
