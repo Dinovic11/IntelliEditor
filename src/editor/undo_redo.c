@@ -1,3 +1,4 @@
+#include "memory.h"
 #include <stdlib.h>
 #include <string.h>
 #include "undo_redo.h"
@@ -19,7 +20,7 @@ struct UndoRedo {
 
 static void snapshot_free(Snapshot *snapshot) {
     if (snapshot && snapshot->text) {
-        free(snapshot->text);
+        memory_free(snapshot->text);
         snapshot->text = NULL;
     }
 }
@@ -29,8 +30,13 @@ static bool snapshot_init(Snapshot *snapshot, const char *text, size_t cursor) {
         return false;
     }
     snapshot->cursor = cursor;
-    snapshot->text = strdup(text);
-    return snapshot->text != NULL;
+    size_t len = strlen(text) + 1;
+    snapshot->text = memory_malloc(len);
+    if (!snapshot->text) {
+        return false;
+    }
+    memcpy(snapshot->text, text, len);
+    return true;
 }
 
 static bool ensure_capacity(Snapshot **stack, size_t *capacity, size_t min_capacity) {
@@ -41,7 +47,7 @@ static bool ensure_capacity(Snapshot **stack, size_t *capacity, size_t min_capac
     while (new_capacity < min_capacity) {
         new_capacity *= 2;
     }
-    Snapshot *new_stack = realloc(*stack, new_capacity * sizeof(Snapshot));
+    Snapshot *new_stack = memory_realloc(*stack, new_capacity * sizeof(Snapshot));
     if (!new_stack) {
         return false;
     }
@@ -51,7 +57,7 @@ static bool ensure_capacity(Snapshot **stack, size_t *capacity, size_t min_capac
 }
 
 UndoRedo *undo_redo_create(void) {
-    UndoRedo *state = malloc(sizeof(UndoRedo));
+    UndoRedo *state = memory_malloc(sizeof(UndoRedo));
     if (!state) {
         return NULL;
     }
@@ -74,9 +80,9 @@ void undo_redo_destroy(UndoRedo *state) {
     for (size_t i = 0; i < state->redo_count; ++i) {
         snapshot_free(&state->redo_stack[i]);
     }
-    free(state->undo_stack);
-    free(state->redo_stack);
-    free(state);
+    memory_free(state->undo_stack);
+    memory_free(state->redo_stack);
+    memory_free(state);
 }
 
 void undo_redo_clear(UndoRedo *state) {
@@ -143,7 +149,7 @@ bool undo_redo_save(UndoRedo *state, const GapBuffer *buffer) {
     }
 
     size_t length = gap_buffer_length(buffer);
-    char *text = malloc(length + 1);
+    char *text = memory_malloc(length + 1);
     if (!text) {
         return false;
     }
@@ -156,7 +162,7 @@ bool undo_redo_save(UndoRedo *state, const GapBuffer *buffer) {
     state->redo_count = 0;
 
     bool result = undo_redo_push_undo(state, text, cursor);
-    free(text);
+    memory_free(text);
     return result;
 }
 
@@ -166,17 +172,17 @@ bool undo_redo_undo(UndoRedo *state, GapBuffer *buffer) {
     }
 
     size_t length = gap_buffer_length(buffer);
-    char *text = malloc(length + 1);
+    char *text = memory_malloc(length + 1);
     if (!text) {
         return false;
     }
     gap_buffer_to_string(buffer, text, length + 1);
     size_t cursor = gap_buffer_cursor(buffer);
     if (!undo_redo_push_redo(state, text, cursor)) {
-        free(text);
+        memory_free(text);
         return false;
     }
-    free(text);
+    memory_free(text);
 
     Snapshot snapshot;
     if (!undo_redo_pop_snapshot(state->undo_stack, &state->undo_count, &snapshot)) {
@@ -196,17 +202,17 @@ bool undo_redo_redo(UndoRedo *state, GapBuffer *buffer) {
     }
 
     size_t length = gap_buffer_length(buffer);
-    char *text = malloc(length + 1);
+    char *text = memory_malloc(length + 1);
     if (!text) {
         return false;
     }
     gap_buffer_to_string(buffer, text, length + 1);
     size_t cursor = gap_buffer_cursor(buffer);
     if (!undo_redo_push_undo(state, text, cursor)) {
-        free(text);
+        memory_free(text);
         return false;
     }
-    free(text);
+    memory_free(text);
 
     Snapshot snapshot;
     if (!undo_redo_pop_snapshot(state->redo_stack, &state->redo_count, &snapshot)) {

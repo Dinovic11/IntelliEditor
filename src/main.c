@@ -8,9 +8,11 @@
 #include "encoding.h"
 #include "config.h"
 #include "search_replace.h"
+#include "memory.h"
 
 int main(void) {
     enable_utf8_console();
+    memory_init();
 
     GapBuffer *buffer = gap_buffer_create(64);
     if (!buffer) {
@@ -53,11 +55,11 @@ int main(void) {
         char *roundtrip = utf16_to_utf8_alloc(wide);
         if (roundtrip) {
             printf("UTF-8->UTF-16->UTF-8 : %s\n", roundtrip);
-            free(roundtrip);
+            memory_free(roundtrip);
         } else {
             fprintf(stderr, "Erreur : conversion UTF-16 vers UTF-8 échouée\n");
         }
-        free(wide);
+        memory_free(wide);
     } else {
         fprintf(stderr, "Erreur : conversion UTF-8 vers UTF-16 échouée\n");
     }
@@ -81,7 +83,7 @@ int main(void) {
             if (exporter_save_ie("document.ie", output, formatter_get_styles(formatter), formatter_style_count(formatter))) {
                 printf("Export .ie réussi\n");
             }
-            free(styled);
+            memory_free(styled);
         }
         formatter_destroy(formatter);
     } else {

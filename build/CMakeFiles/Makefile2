@@ -67,6 +67,7 @@ all: CMakeFiles/undo_redo.dir/all
 all: CMakeFiles/formatter.dir/all
 all: CMakeFiles/exporter.dir/all
 all: CMakeFiles/search_replace.dir/all
+all: CMakeFiles/memory.dir/all
 all: CMakeFiles/encoding.dir/all
 all: CMakeFiles/config.dir/all
 all: CMakeFiles/main.dir/all
@@ -78,6 +79,7 @@ codegen: CMakeFiles/undo_redo.dir/codegen
 codegen: CMakeFiles/formatter.dir/codegen
 codegen: CMakeFiles/exporter.dir/codegen
 codegen: CMakeFiles/search_replace.dir/codegen
+codegen: CMakeFiles/memory.dir/codegen
 codegen: CMakeFiles/encoding.dir/codegen
 codegen: CMakeFiles/config.dir/codegen
 codegen: CMakeFiles/main.dir/codegen
@@ -93,6 +95,7 @@ clean: CMakeFiles/undo_redo.dir/clean
 clean: CMakeFiles/formatter.dir/clean
 clean: CMakeFiles/exporter.dir/clean
 clean: CMakeFiles/search_replace.dir/clean
+clean: CMakeFiles/memory.dir/clean
 clean: CMakeFiles/encoding.dir/clean
 clean: CMakeFiles/config.dir/clean
 clean: CMakeFiles/main.dir/clean
@@ -137,7 +140,7 @@ CMakeFiles/gap_buffer.dir/clean:
 CMakeFiles/undo_redo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=15,16 "Built target undo_redo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=17,18 "Built target undo_redo"
 .PHONY : CMakeFiles/undo_redo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -154,7 +157,7 @@ undo_redo: CMakeFiles/undo_redo.dir/rule
 # codegen rule for target.
 CMakeFiles/undo_redo.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=15,16 "Finished codegen for target undo_redo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=17,18 "Finished codegen for target undo_redo"
 .PHONY : CMakeFiles/undo_redo.dir/codegen
 
 # clean rule for target.
@@ -233,7 +236,7 @@ CMakeFiles/exporter.dir/clean:
 CMakeFiles/search_replace.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\search_replace.dir\build.make CMakeFiles/search_replace.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\search_replace.dir\build.make CMakeFiles/search_replace.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=13,14 "Built target search_replace"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=15,16 "Built target search_replace"
 .PHONY : CMakeFiles/search_replace.dir/all
 
 # Build rule for subdir invocation for target.
@@ -250,13 +253,45 @@ search_replace: CMakeFiles/search_replace.dir/rule
 # codegen rule for target.
 CMakeFiles/search_replace.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\search_replace.dir\build.make CMakeFiles/search_replace.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=13,14 "Finished codegen for target search_replace"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=15,16 "Finished codegen for target search_replace"
 .PHONY : CMakeFiles/search_replace.dir/codegen
 
 # clean rule for target.
 CMakeFiles/search_replace.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\search_replace.dir\build.make CMakeFiles/search_replace.dir/clean
 .PHONY : CMakeFiles/search_replace.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/memory.dir
+
+# All Build rule for target.
+CMakeFiles/memory.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=13,14 "Built target memory"
+.PHONY : CMakeFiles/memory.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/memory.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/memory.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 0
+.PHONY : CMakeFiles/memory.dir/rule
+
+# Convenience name for target.
+memory: CMakeFiles/memory.dir/rule
+.PHONY : memory
+
+# codegen rule for target.
+CMakeFiles/memory.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=13,14 "Finished codegen for target memory"
+.PHONY : CMakeFiles/memory.dir/codegen
+
+# clean rule for target.
+CMakeFiles/memory.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/clean
+.PHONY : CMakeFiles/memory.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/encoding.dir
@@ -331,6 +366,7 @@ CMakeFiles/main.dir/all: CMakeFiles/undo_redo.dir/all
 CMakeFiles/main.dir/all: CMakeFiles/formatter.dir/all
 CMakeFiles/main.dir/all: CMakeFiles/exporter.dir/all
 CMakeFiles/main.dir/all: CMakeFiles/search_replace.dir/all
+CMakeFiles/main.dir/all: CMakeFiles/memory.dir/all
 CMakeFiles/main.dir/all: CMakeFiles/encoding.dir/all
 CMakeFiles/main.dir/all: CMakeFiles/config.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/depend
@@ -340,7 +376,7 @@ CMakeFiles/main.dir/all: CMakeFiles/config.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule

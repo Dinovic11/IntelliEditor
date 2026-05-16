@@ -1,5 +1,6 @@
 #include "exporter.h"
 #include "encoding.h"
+#include "memory.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -82,7 +83,7 @@ static bool write_rtf_text(FILE *stream, const char *text) {
     for (size_t i = 0; wide[i] != L'\0'; ++i) {
         append_rtf_char(stream, wide[i]);
     }
-    free(wide);
+    memory_free(wide);
     return true;
 }
 
@@ -124,7 +125,7 @@ bool exporter_save_rtf(const char *filename, const char *text, const TextStyleRa
     size_t event_count = 0;
     struct StyleEvent *events = NULL;
     if (styles && style_count > 0) {
-        events = malloc(style_count * 2 * sizeof(*events));
+        events = memory_malloc(style_count * 2 * sizeof(*events));
         if (!events) {
             fclose(stream);
             return false;
@@ -172,7 +173,7 @@ bool exporter_save_rtf(const char *filename, const char *text, const TextStyleRa
         fprintf(stream, "\n}");
     }
 
-    free(events);
+    memory_free(events);
     fclose(stream);
     return ok;
 }

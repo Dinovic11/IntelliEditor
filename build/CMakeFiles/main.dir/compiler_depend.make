@@ -7,6 +7,7 @@ CMakeFiles/main.dir/src/main.c.obj: C:/Users/paisible/Work/Web/PERSO/IntelliEdit
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/exporter.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/formatter.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/gap_buffer.h \
+  C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/search_replace.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/undo_redo.h \
   C:/tools/msys64/mingw64/include/_mingw.h \
   C:/tools/msys64/mingw64/include/_mingw_mac.h \
@@ -60,11 +61,13 @@ C:/tools/msys64/mingw64/include/string.h:
 
 C:/tools/msys64/mingw64/include/stdlib.h:
 
-C:/tools/msys64/mingw64/include/corecrt.h:
-
 C:/tools/msys64/mingw64/include/_mingw_secapi.h:
 
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/undo_redo.h:
+
+C:/tools/msys64/mingw64/include/stdio.h:
+
+C:/tools/msys64/mingw64/include/sec_api/wchar_s.h:
 
 C:/tools/msys64/mingw64/include/_mingw_off_t.h:
 
@@ -82,25 +85,27 @@ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/formatter.h:
 
 C:/tools/msys64/mingw64/include/_mingw.h:
 
-C:/tools/msys64/mingw64/include/sec_api/stdlib_s.h:
-
-C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/encoding.h:
-
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/src/main.c:
 
 C:/tools/msys64/mingw64/include/corecrt_wstdlib.h:
 
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/config.h:
 
+C:/tools/msys64/mingw64/include/corecrt.h:
+
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/encoding.h:
+
+C:/tools/msys64/mingw64/include/sec_api/stdlib_s.h:
+
 C:/tools/msys64/mingw64/include/corecrt_memory.h:
+
+C:/tools/msys64/mingw64/include/sec_api/wconio_s.h:
+
+C:/tools/msys64/mingw64/include/corecrt_stdio_config.h:
 
 C:/tools/msys64/mingw64/include/corecrt_wconio.h:
 
 C:/tools/msys64/mingw64/include/sec_api/stdio_s.h:
-
-C:/tools/msys64/mingw64/include/sec_api/wchar_s.h:
-
-C:/tools/msys64/mingw64/include/stdio.h:
 
 C:/tools/msys64/mingw64/include/corecrt_wctype.h:
 
@@ -112,10 +117,8 @@ C:/tools/msys64/mingw64/include/errno.h:
 
 C:/tools/msys64/mingw64/include/malloc.h:
 
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/search_replace.h:
+
 C:/tools/msys64/mingw64/include/sec_api/string_s.h:
-
-C:/tools/msys64/mingw64/include/corecrt_stdio_config.h:
-
-C:/tools/msys64/mingw64/include/sec_api/wconio_s.h:
 
 C:/tools/msys64/mingw64/include/stddef.h:

@@ -19,10 +19,11 @@ add_library(undo_redo STATIC src/editor/undo_redo.c)
 add_library(formatter STATIC src/editor/formatter.c)
 add_library(exporter STATIC src/editor/exporter.c)
 add_library(search_replace STATIC src/editor/search_replace.c)
+add_library(memory STATIC src/utils/memory.c)
 add_library(encoding STATIC src/utils/encoding.c)
 add_library(config STATIC src/utils/config.c)
 
 # exécutable de test
 add_executable(main src/main.c)
 
-target_link_libraries(main PRIVATE gap_buffer undo_redo formatter exporter search_replace encoding config)
+target_link_libraries(main PRIVATE gap_buffer undo_redo formatter exporter search_replace memory encoding config)

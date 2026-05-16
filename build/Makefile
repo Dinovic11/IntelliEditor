@@ -181,6 +181,19 @@ search_replace/fast:
 .PHONY : search_replace/fast
 
 #=============================================================================
+# Target rules for targets named memory
+
+# Build rule for target.
+memory: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 memory
+.PHONY : memory
+
+# fast build rule for target.
+memory/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/build
+.PHONY : memory/fast
+
+#=============================================================================
 # Target rules for targets named encoding
 
 # Build rule for target.
@@ -411,6 +424,30 @@ src/utils/encoding.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\encoding.dir\build.make CMakeFiles/encoding.dir/src/utils/encoding.c.s
 .PHONY : src/utils/encoding.c.s
 
+src/utils/memory.obj: src/utils/memory.c.obj
+.PHONY : src/utils/memory.obj
+
+# target to build an object file
+src/utils/memory.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/src/utils/memory.c.obj
+.PHONY : src/utils/memory.c.obj
+
+src/utils/memory.i: src/utils/memory.c.i
+.PHONY : src/utils/memory.i
+
+# target to preprocess a source file
+src/utils/memory.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/src/utils/memory.c.i
+.PHONY : src/utils/memory.c.i
+
+src/utils/memory.s: src/utils/memory.c.s
+.PHONY : src/utils/memory.s
+
+# target to generate assembly for a file
+src/utils/memory.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/src/utils/memory.c.s
+.PHONY : src/utils/memory.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -425,6 +462,7 @@ help:
 	@echo ... formatter
 	@echo ... gap_buffer
 	@echo ... main
+	@echo ... memory
 	@echo ... search_replace
 	@echo ... undo_redo
 	@echo ... src/editor/exporter.obj
@@ -451,6 +489,9 @@ help:
 	@echo ... src/utils/encoding.obj
 	@echo ... src/utils/encoding.i
 	@echo ... src/utils/encoding.s
+	@echo ... src/utils/memory.obj
+	@echo ... src/utils/memory.i
+	@echo ... src/utils/memory.s
 .PHONY : help
 
 

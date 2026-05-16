@@ -2,6 +2,7 @@
 #include <string.h>
 #include <windows.h>
 #include "encoding.h"
+#include "memory.h"
 
 bool enable_utf8_console(void) {
     if (!SetConsoleOutputCP(CP_UTF8) || !SetConsoleCP(CP_UTF8)) {
@@ -86,14 +87,14 @@ wchar_t *utf8_to_utf16_alloc(const char *utf8) {
         return NULL;
     }
 
-    wchar_t *buffer = malloc((size_t)required * sizeof(wchar_t));
+    wchar_t *buffer = memory_malloc((size_t)required * sizeof(wchar_t));
     if (!buffer) {
         return NULL;
     }
 
     int result = MultiByteToWideChar(CP_UTF8, 0, utf8, -1, buffer, required);
     if (result == 0) {
-        free(buffer);
+        memory_free(buffer);
         return NULL;
     }
 
@@ -110,14 +111,14 @@ char *utf16_to_utf8_alloc(const wchar_t *utf16) {
         return NULL;
     }
 
-    char *buffer = malloc((size_t)required);
+    char *buffer = memory_malloc((size_t)required);
     if (!buffer) {
         return NULL;
     }
 
     int result = WideCharToMultiByte(CP_UTF8, 0, utf16, -1, buffer, required, NULL, NULL);
     if (result == 0) {
-        free(buffer);
+        memory_free(buffer);
         return NULL;
     }
 

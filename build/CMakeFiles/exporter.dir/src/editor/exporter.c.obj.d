@@ -22,6 +22,7 @@ CMakeFiles/exporter.dir/src/editor/exporter.c.obj: \
  C:/tools/msys64/mingw64/include/_mingw_stat64.h \
  C:/tools/msys64/mingw64/include/swprintf.inl \
  C:/tools/msys64/mingw64/include/sec_api/wchar_s.h \
+ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h \
  C:/tools/msys64/mingw64/include/stdio.h \
  C:/tools/msys64/mingw64/include/sec_api/stdio_s.h \
  C:/tools/msys64/mingw64/include/stdlib.h \

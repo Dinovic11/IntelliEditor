@@ -100,6 +100,7 @@ main.exe: libundo_redo.a
 main.exe: libformatter.a
 main.exe: libexporter.a
 main.exe: libsearch_replace.a
+main.exe: libmemory.a
 main.exe: libencoding.a
 main.exe: libconfig.a
 main.exe: CMakeFiles/main.dir/linkLibs.rsp

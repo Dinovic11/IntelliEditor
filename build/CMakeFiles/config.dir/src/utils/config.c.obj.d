@@ -10,6 +10,7 @@ CMakeFiles/config.dir/src/utils/config.c.obj: \
  C:/tools/msys64/mingw64/include/_mingw_mac.h \
  C:/tools/msys64/mingw64/include/_mingw_secapi.h \
  C:/tools/msys64/mingw64/include/vadefs.h \
+ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h \
  C:/tools/msys64/mingw64/include/ctype.h \
  C:/tools/msys64/mingw64/include/corecrt_wctype.h \
  C:/tools/msys64/mingw64/include/stdio.h \

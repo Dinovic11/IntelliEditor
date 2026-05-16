@@ -294,4 +294,5 @@ CMakeFiles/encoding.dir/src/utils/encoding.c.obj: \
  C:/tools/msys64/mingw64/include/_mingw_off_t.h \
  C:/tools/msys64/mingw64/include/_mingw_stat64.h \
  C:/tools/msys64/mingw64/include/swprintf.inl \
- C:/tools/msys64/mingw64/include/sec_api/wchar_s.h
+ C:/tools/msys64/mingw64/include/sec_api/wchar_s.h \
+ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h

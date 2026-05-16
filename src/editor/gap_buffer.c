@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "gap_buffer.h"
+#include "memory.h"
 
 struct GapBuffer {
     char *data;
@@ -20,7 +21,7 @@ static bool gap_buffer_resize(GapBuffer *buffer, size_t min_capacity) {
     if (new_capacity < min_capacity) {
         new_capacity = min_capacity;
     }
-    char *new_data = malloc(new_capacity);
+    char *new_data = memory_malloc(new_capacity);
     if (!new_data) {
         return false;
     }
@@ -31,7 +32,7 @@ static bool gap_buffer_resize(GapBuffer *buffer, size_t min_capacity) {
     memcpy(new_data, buffer->data, prefix_size);
     memcpy(new_data + new_capacity - suffix_size, buffer->data + buffer->gap_end, suffix_size);
 
-    free(buffer->data);
+    memory_free(buffer->data);
     buffer->data = new_data;
     buffer->gap_end = new_capacity - suffix_size;
     buffer->capacity = new_capacity;
@@ -43,15 +44,15 @@ GapBuffer *gap_buffer_create(size_t initial_capacity) {
         initial_capacity = 64;
     }
 
-    GapBuffer *buffer = malloc(sizeof(GapBuffer));
+    GapBuffer *buffer = memory_malloc(sizeof(GapBuffer));
     if (!buffer) {
         return NULL;
     }
 
     buffer->capacity = initial_capacity;
-    buffer->data = malloc(buffer->capacity);
+    buffer->data = memory_malloc(buffer->capacity);
     if (!buffer->data) {
-        free(buffer);
+        memory_free(buffer);
         return NULL;
     }
 
@@ -64,8 +65,8 @@ void gap_buffer_destroy(GapBuffer *buffer) {
     if (!buffer) {
         return;
     }
-    free(buffer->data);
-    free(buffer);
+    memory_free(buffer->data);
+    memory_free(buffer);
 }
 
 size_t gap_buffer_length(const GapBuffer *buffer) {
@@ -159,13 +160,13 @@ bool gap_buffer_set_text(GapBuffer *buffer, const char *text) {
         new_capacity *= 2;
     }
 
-    char *new_data = malloc(new_capacity);
+    char *new_data = memory_malloc(new_capacity);
     if (!new_data) {
         return false;
     }
 
     memcpy(new_data, text, length);
-    free(buffer->data);
+    memory_free(buffer->data);
 
     buffer->data = new_data;
     buffer->capacity = new_capacity;

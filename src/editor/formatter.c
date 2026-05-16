@@ -1,4 +1,5 @@
 #include "formatter.h"
+#include "memory.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -43,7 +44,7 @@ static bool ensure_capacity(Formatter *formatter) {
         return true;
     }
     size_t new_capacity = formatter->capacity ? formatter->capacity * 2 : 8;
-    TextStyleRange *new_ranges = realloc(formatter->ranges, new_capacity * sizeof(TextStyleRange));
+    TextStyleRange *new_ranges = memory_realloc(formatter->ranges, new_capacity * sizeof(TextStyleRange));
     if (!new_ranges) {
         return false;
     }
@@ -53,7 +54,7 @@ static bool ensure_capacity(Formatter *formatter) {
 }
 
 Formatter *formatter_create(void) {
-    Formatter *formatter = malloc(sizeof(Formatter));
+    Formatter *formatter = memory_malloc(sizeof(Formatter));
     if (!formatter) {
         return NULL;
     }
@@ -67,8 +68,8 @@ void formatter_destroy(Formatter *formatter) {
     if (!formatter) {
         return;
     }
-    free(formatter->ranges);
-    free(formatter);
+    memory_free(formatter->ranges);
+    memory_free(formatter);
 }
 
 bool formatter_set_style(Formatter *formatter, size_t position, size_t length, TextStyle style) {
@@ -127,7 +128,7 @@ char *formatter_render_markup(const Formatter *formatter, const char *text) {
 
     size_t text_len = strlen(text);
     size_t estimated_size = text_len + 256;
-    char *output = malloc(estimated_size);
+    char *output = memory_malloc(estimated_size);
     if (!output) {
         return NULL;
     }
@@ -136,9 +137,9 @@ char *formatter_render_markup(const Formatter *formatter, const char *text) {
     size_t count = 0;
     if (formatter && formatter->count > 0) {
         count = formatter->count;
-        sorted = malloc(count * sizeof(TextStyleRange));
+        sorted = memory_malloc(count * sizeof(TextStyleRange));
         if (!sorted) {
-            free(output);
+            memory_free(output);
             return NULL;
         }
         memcpy(sorted, formatter->ranges, count * sizeof(TextStyleRange));
@@ -156,7 +157,7 @@ char *formatter_render_markup(const Formatter *formatter, const char *text) {
             size_t chunk = range.position - text_pos;
             if (out_pos + chunk + 1 >= estimated_size) {
                 estimated_size = (out_pos + chunk + 1) * 2;
-                output = realloc(output, estimated_size);
+                output = memory_realloc(output, estimated_size);
             }
             memcpy(output + out_pos, text + text_pos, chunk);
             out_pos += chunk;
@@ -169,7 +170,7 @@ char *formatter_render_markup(const Formatter *formatter, const char *text) {
         size_t end_len = strlen(end_tag);
         if (out_pos + begin_len + range.length + end_len + 1 >= estimated_size) {
             estimated_size = (out_pos + begin_len + range.length + end_len + 1) * 2;
-            output = realloc(output, estimated_size);
+            output = memory_realloc(output, estimated_size);
         }
         memcpy(output + out_pos, begin_tag, begin_len);
         out_pos += begin_len;
@@ -188,13 +189,13 @@ char *formatter_render_markup(const Formatter *formatter, const char *text) {
         size_t chunk = text_len - text_pos;
         if (out_pos + chunk + 1 >= estimated_size) {
             estimated_size = out_pos + chunk + 1;
-            output = realloc(output, estimated_size);
+            output = memory_realloc(output, estimated_size);
         }
         memcpy(output + out_pos, text + text_pos, chunk);
         out_pos += chunk;
     }
 
     output[out_pos] = '\0';
-    free(sorted);
+    memory_free(sorted);
     return output;
 }

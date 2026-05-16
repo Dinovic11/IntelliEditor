@@ -10,6 +10,7 @@ CMakeFiles/formatter.dir/src/editor/formatter.c.obj: \
  C:/tools/msys64/mingw64/include/_mingw_secapi.h \
  C:/tools/msys64/mingw64/include/vadefs.h \
  C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stdbool.h \
+ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h \
  C:/tools/msys64/mingw64/include/stdlib.h \
  C:/tools/msys64/mingw64/include/corecrt_wstdlib.h \
  C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/limits.h \

@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libmemory.a CMakeFiles/memory.dir/src/utils/memory.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libmemory.a

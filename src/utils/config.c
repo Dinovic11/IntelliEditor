@@ -1,4 +1,5 @@
 #include "config.h"
+#include "memory.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,7 +22,7 @@ static char *config_strdup(const char *source) {
         return NULL;
     }
     size_t len = strlen(source) + 1;
-    char *copy = malloc(len);
+    char *copy = memory_malloc(len);
     if (copy) {
         memcpy(copy, source, len);
     }
@@ -52,7 +53,7 @@ static bool config_ensure_capacity(Config *config) {
         return true;
     }
     size_t new_capacity = config->capacity ? config->capacity * 2 : 8;
-    ConfigEntry *new_entries = realloc(config->entries, new_capacity * sizeof(ConfigEntry));
+    ConfigEntry *new_entries = memory_realloc(config->entries, new_capacity * sizeof(ConfigEntry));
     if (!new_entries) {
         return false;
     }
@@ -71,7 +72,7 @@ static ConfigEntry *config_find_entry(const Config *config, const char *section,
 }
 
 Config *config_create(void) {
-    Config *config = malloc(sizeof(Config));
+    Config *config = memory_malloc(sizeof(Config));
     if (!config) {
         return NULL;
     }
@@ -86,12 +87,12 @@ void config_destroy(Config *config) {
         return;
     }
     for (size_t i = 0; i < config->count; ++i) {
-        free(config->entries[i].section);
-        free(config->entries[i].key);
-        free(config->entries[i].value);
+        memory_free(config->entries[i].section);
+        memory_free(config->entries[i].key);
+        memory_free(config->entries[i].value);
     }
-    free(config->entries);
-    free(config);
+    memory_free(config->entries);
+    memory_free(config);
 }
 
 bool config_set(Config *config, const char *section, const char *key, const char *value) {
@@ -105,7 +106,7 @@ bool config_set(Config *config, const char *section, const char *key, const char
         if (!new_value) {
             return false;
         }
-        free(entry->value);
+        memory_free(entry->value);
         entry->value = new_value;
         return true;
     }
@@ -119,9 +120,9 @@ bool config_set(Config *config, const char *section, const char *key, const char
     new_entry->key = config_strdup(key);
     new_entry->value = config_strdup(value);
     if (!new_entry->section || !new_entry->key || !new_entry->value) {
-        free(new_entry->section);
-        free(new_entry->key);
-        free(new_entry->value);
+        memory_free(new_entry->section);
+        memory_free(new_entry->key);
+        memory_free(new_entry->value);
         return false;
     }
     return true;
@@ -141,9 +142,9 @@ bool config_remove(Config *config, const char *section, const char *key) {
     }
     for (size_t i = 0; i < config->count; ++i) {
         if (strcmp(config->entries[i].section, section) == 0 && strcmp(config->entries[i].key, key) == 0) {
-            free(config->entries[i].section);
-            free(config->entries[i].key);
-            free(config->entries[i].value);
+            memory_free(config->entries[i].section);
+            memory_free(config->entries[i].key);
+            memory_free(config->entries[i].value);
             if (i + 1 < config->count) {
                 memmove(&config->entries[i], &config->entries[i + 1], (config->count - i - 1) * sizeof(ConfigEntry));
             }
@@ -218,7 +219,7 @@ bool config_save(const Config *config, const char *path) {
         return false;
     }
 
-    ConfigEntry *sorted = malloc(config->count * sizeof(ConfigEntry));
+    ConfigEntry *sorted = memory_malloc(config->count * sizeof(ConfigEntry));
     if (!sorted) {
         return false;
     }
@@ -227,7 +228,7 @@ bool config_save(const Config *config, const char *path) {
 
     FILE *file = fopen(path, "w");
     if (!file) {
-        free(sorted);
+        memory_free(sorted);
         return false;
     }
 
@@ -245,6 +246,6 @@ bool config_save(const Config *config, const char *path) {
     }
 
     fclose(file);
-    free(sorted);
+    memory_free(sorted);
     return true;
 }
