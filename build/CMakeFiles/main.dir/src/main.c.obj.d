@@ -41,4 +41,5 @@ CMakeFiles/main.dir/src/main.c.obj: \
  C:/tools/msys64/mingw64/include/sec_api/wchar_s.h \
  C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/config.h \
  C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/search_replace.h \
- C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h
+ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h \
+ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/nlp.h

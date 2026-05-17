@@ -9,13 +9,18 @@
 #include "config.h"
 #include "search_replace.h"
 #include "memory.h"
+#include "nlp.h"
 
 int main(int argc, char **argv) {
     bool standalone = false;
+    bool nlp_test = false;
+    const char *nlp_input = "Donne un court résumé de IntelliEditor en français.";
     for (int i = 1; i < argc; ++i) {
         if (strcmp(argv[i], "--standalone") == 0 || strcmp(argv[i], "-s") == 0) {
             standalone = true;
-            break;
+        }
+        if (strcmp(argv[i], "--nlp-test") == 0 || strcmp(argv[i], "--llm-test") == 0) {
+            nlp_test = true;
         }
     }
 
@@ -26,6 +31,20 @@ int main(int argc, char **argv) {
         printf("Mode: base autonome (standalone)\n");
     } else {
         printf("Mode: normal (headless run)\n");
+    }
+
+    if (nlp_test) {
+        if (nlp_init()) {
+            char nlp_output[512] = {0};
+            if (nlp_process_text(nlp_input, nlp_output, (int)sizeof(nlp_output))) {
+                printf("NLP : résultat disponible -> %s\n", nlp_output);
+            } else {
+                printf("NLP : le modèle est indisponible ou n'a pas retourné de résultat.\n");
+            }
+            nlp_shutdown();
+        } else {
+            printf("NLP : modèle indisponible, mode autonome activé.\n");
+        }
     }
 
     GapBuffer *buffer = gap_buffer_create(64);

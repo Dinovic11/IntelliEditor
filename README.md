@@ -37,3 +37,16 @@ cmake --build build --config Release
 
 Le prototype est volontairement simple : il montre comment Dev B peut intégrer le `editor_api` sans connaître les détails internes du buffer.
 
+### Test NLP / LLM
+
+Un exemple de flux NLP est également disponible via `main.exe` avec l'option `--nlp-test`.
+Cette option appelle `nlp_init()`, tente `nlp_process_text()` et bascule proprement en mode autonome si aucun modèle n'est disponible.
+
+```powershell
+cd /c/Users/paisible/Work/Web/PERSO/IntelliEditor
+cmake --build build --config Release
+./build/main.exe --nlp-test
+```
+
+Le stub `src/nlp_stub.c` est prévu pour être remplacé par la vraie implémentation LLM de Dev C.
+
