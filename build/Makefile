@@ -220,6 +220,32 @@ config/fast:
 .PHONY : config/fast
 
 #=============================================================================
+# Target rules for targets named editor_api
+
+# Build rule for target.
+editor_api: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 editor_api
+.PHONY : editor_api
+
+# fast build rule for target.
+editor_api/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\editor_api.dir\build.make CMakeFiles/editor_api.dir/build
+.PHONY : editor_api/fast
+
+#=============================================================================
+# Target rules for targets named nlp_stub
+
+# Build rule for target.
+nlp_stub: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 nlp_stub
+.PHONY : nlp_stub
+
+# fast build rule for target.
+nlp_stub/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\nlp_stub.dir\build.make CMakeFiles/nlp_stub.dir/build
+.PHONY : nlp_stub/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -352,6 +378,30 @@ src/editor/undo_redo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/src/editor/undo_redo.c.s
 .PHONY : src/editor/undo_redo.c.s
 
+src/editor_api.obj: src/editor_api.c.obj
+.PHONY : src/editor_api.obj
+
+# target to build an object file
+src/editor_api.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\editor_api.dir\build.make CMakeFiles/editor_api.dir/src/editor_api.c.obj
+.PHONY : src/editor_api.c.obj
+
+src/editor_api.i: src/editor_api.c.i
+.PHONY : src/editor_api.i
+
+# target to preprocess a source file
+src/editor_api.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\editor_api.dir\build.make CMakeFiles/editor_api.dir/src/editor_api.c.i
+.PHONY : src/editor_api.c.i
+
+src/editor_api.s: src/editor_api.c.s
+.PHONY : src/editor_api.s
+
+# target to generate assembly for a file
+src/editor_api.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\editor_api.dir\build.make CMakeFiles/editor_api.dir/src/editor_api.c.s
+.PHONY : src/editor_api.c.s
+
 src/main.obj: src/main.c.obj
 .PHONY : src/main.obj
 
@@ -375,6 +425,30 @@ src/main.s: src/main.c.s
 src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/main.c.s
 .PHONY : src/main.c.s
+
+src/nlp_stub.obj: src/nlp_stub.c.obj
+.PHONY : src/nlp_stub.obj
+
+# target to build an object file
+src/nlp_stub.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\nlp_stub.dir\build.make CMakeFiles/nlp_stub.dir/src/nlp_stub.c.obj
+.PHONY : src/nlp_stub.c.obj
+
+src/nlp_stub.i: src/nlp_stub.c.i
+.PHONY : src/nlp_stub.i
+
+# target to preprocess a source file
+src/nlp_stub.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\nlp_stub.dir\build.make CMakeFiles/nlp_stub.dir/src/nlp_stub.c.i
+.PHONY : src/nlp_stub.c.i
+
+src/nlp_stub.s: src/nlp_stub.c.s
+.PHONY : src/nlp_stub.s
+
+# target to generate assembly for a file
+src/nlp_stub.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\nlp_stub.dir\build.make CMakeFiles/nlp_stub.dir/src/nlp_stub.c.s
+.PHONY : src/nlp_stub.c.s
 
 src/utils/config.obj: src/utils/config.c.obj
 .PHONY : src/utils/config.obj
@@ -457,12 +531,14 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... config
+	@echo ... editor_api
 	@echo ... encoding
 	@echo ... exporter
 	@echo ... formatter
 	@echo ... gap_buffer
 	@echo ... main
 	@echo ... memory
+	@echo ... nlp_stub
 	@echo ... search_replace
 	@echo ... undo_redo
 	@echo ... src/editor/exporter.obj
@@ -480,9 +556,15 @@ help:
 	@echo ... src/editor/undo_redo.obj
 	@echo ... src/editor/undo_redo.i
 	@echo ... src/editor/undo_redo.s
+	@echo ... src/editor_api.obj
+	@echo ... src/editor_api.i
+	@echo ... src/editor_api.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/nlp_stub.obj
+	@echo ... src/nlp_stub.i
+	@echo ... src/nlp_stub.s
 	@echo ... src/utils/config.obj
 	@echo ... src/utils/config.i
 	@echo ... src/utils/config.s

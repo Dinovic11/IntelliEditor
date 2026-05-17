@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libnlp_stub.a CMakeFiles/nlp_stub.dir/src/nlp_stub.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libnlp_stub.a

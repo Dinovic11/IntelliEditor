@@ -3,6 +3,7 @@
 
 CMakeFiles/config.dir/src/utils/config.c.obj: C:/Users/paisible/Work/Web/PERSO/IntelliEditor/src/utils/config.c \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/config.h \
+  C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h \
   C:/tools/msys64/mingw64/include/_mingw.h \
   C:/tools/msys64/mingw64/include/_mingw_mac.h \
   C:/tools/msys64/mingw64/include/_mingw_off_t.h \
@@ -33,13 +34,11 @@ CMakeFiles/config.dir/src/utils/config.c.obj: C:/Users/paisible/Work/Web/PERSO/I
   C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/syslimits.h
 
 
-C:/tools/msys64/mingw64/include/ctype.h:
+C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stddef.h:
 
 C:/tools/msys64/mingw64/include/crtdefs.h:
 
 C:/tools/msys64/mingw64/include/stdlib.h:
-
-C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stddef.h:
 
 C:/tools/msys64/mingw64/include/corecrt_stdio_config.h:
 
@@ -71,6 +70,8 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/limits.h:
 
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/config.h:
 
+C:/tools/msys64/mingw64/include/ctype.h:
+
 C:/tools/msys64/mingw64/include/errno.h:
 
 C:/tools/msys64/mingw64/include/_mingw_mac.h:
@@ -78,6 +79,8 @@ C:/tools/msys64/mingw64/include/_mingw_mac.h:
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stdbool.h:
 
 C:/tools/msys64/mingw64/include/malloc.h:
+
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h:
 
 C:/tools/msys64/mingw64/include/sec_api/stdio_s.h:
 

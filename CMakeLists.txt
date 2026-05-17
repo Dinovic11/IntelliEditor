@@ -23,7 +23,11 @@ add_library(memory STATIC src/utils/memory.c)
 add_library(encoding STATIC src/utils/encoding.c)
 add_library(config STATIC src/utils/config.c)
 
+# Decoupled API and NLP stub for Dev B (UI) and Dev C (NLP)
+add_library(editor_api STATIC src/editor_api.c)
+add_library(nlp_stub STATIC src/nlp_stub.c)
+
 # exécutable de test
 add_executable(main src/main.c)
 
-target_link_libraries(main PRIVATE gap_buffer undo_redo formatter exporter search_replace memory encoding config)
+target_link_libraries(main PRIVATE gap_buffer undo_redo formatter exporter search_replace memory encoding config editor_api nlp_stub)

@@ -3,6 +3,7 @@
 
 CMakeFiles/encoding.dir/src/utils/encoding.c.obj: C:/Users/paisible/Work/Web/PERSO/IntelliEditor/src/utils/encoding.c \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/encoding.h \
+  C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h \
   C:/tools/msys64/mingw64/include/_bsd_types.h \
   C:/tools/msys64/mingw64/include/_mingw.h \
   C:/tools/msys64/mingw64/include/_mingw_mac.h \
@@ -339,10 +340,6 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/rdseedintrin.h
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/prfchiintrin.h:
 
-C:/tools/msys64/mingw64/include/stdlib.h:
-
-C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512dqintrin.h:
-
 C:/tools/msys64/mingw64/include/stdarg.h:
 
 C:/tools/msys64/mingw64/include/specstrings.h:
@@ -441,7 +438,9 @@ C:/tools/msys64/mingw64/include/mmsyscom.h:
 
 C:/tools/msys64/mingw64/include/memoryapi.h:
 
-C:/tools/msys64/mingw64/include/corecrt_wctype.h:
+C:/tools/msys64/mingw64/include/malloc.h:
+
+C:/tools/msys64/mingw64/include/winscard.h:
 
 C:/tools/msys64/mingw64/include/rpcdcep.h:
 
@@ -450,6 +449,12 @@ C:/tools/msys64/mingw64/include/synchapi.h:
 C:/tools/msys64/mingw64/include/corecrt.h:
 
 C:/tools/msys64/mingw64/include/threadpoollegacyapiset.h:
+
+C:/tools/msys64/mingw64/include/handleapi.h:
+
+C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/popcntintrin.h:
+
+C:/tools/msys64/mingw64/include/consoleapi2.h:
 
 C:/tools/msys64/mingw64/include/datetimeapi.h:
 
@@ -505,8 +510,6 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/amxfp8intrin.h
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx10_2copyintrin.h:
 
-C:/tools/msys64/mingw64/include/handleapi.h:
-
 C:/tools/msys64/mingw64/include/timeapi.h:
 
 C:/tools/msys64/mingw64/include/sdkddkver.h:
@@ -544,6 +547,8 @@ C:/tools/msys64/mingw64/include/_timeval.h:
 C:/tools/msys64/mingw64/include/pshpack4.h:
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512fp16intrin.h:
+
+C:/tools/msys64/mingw64/include/corecrt_wctype.h:
 
 C:/tools/msys64/mingw64/include/_mingw_stat64.h:
 
@@ -647,9 +652,9 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512fp16vlin
 
 C:/tools/msys64/mingw64/include/lzexpand.h:
 
-C:/tools/msys64/mingw64/include/malloc.h:
+C:/tools/msys64/mingw64/include/stdlib.h:
 
-C:/tools/msys64/mingw64/include/winscard.h:
+C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512dqintrin.h:
 
 C:/tools/msys64/mingw64/include/string.h:
 
@@ -719,10 +724,6 @@ C:/tools/msys64/mingw64/include/windef.h:
 
 C:/tools/msys64/mingw64/include/winefs.h:
 
-C:/tools/msys64/mingw64/include/consoleapi2.h:
-
-C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/popcntintrin.h:
-
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/avx512vbmi2vlintrin.h:
 
 C:/tools/msys64/mingw64/include/wingdi.h:
@@ -780,6 +781,8 @@ C:/tools/msys64/mingw64/include/corecrt_memory.h:
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/clzerointrin.h:
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/ammintrin.h:
+
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h:
 
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/amxmovrsintrin.h:
 

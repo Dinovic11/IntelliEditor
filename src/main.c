@@ -10,9 +10,23 @@
 #include "search_replace.h"
 #include "memory.h"
 
-int main(void) {
+int main(int argc, char **argv) {
+    bool standalone = false;
+    for (int i = 1; i < argc; ++i) {
+        if (strcmp(argv[i], "--standalone") == 0 || strcmp(argv[i], "-s") == 0) {
+            standalone = true;
+            break;
+        }
+    }
+
     enable_utf8_console();
     memory_init();
+
+    if (standalone) {
+        printf("Mode: base autonome (standalone)\n");
+    } else {
+        printf("Mode: normal (headless run)\n");
+    }
 
     GapBuffer *buffer = gap_buffer_create(64);
     if (!buffer) {

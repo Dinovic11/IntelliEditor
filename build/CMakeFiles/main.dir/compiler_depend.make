@@ -7,6 +7,7 @@ CMakeFiles/main.dir/src/main.c.obj: C:/Users/paisible/Work/Web/PERSO/IntelliEdit
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/exporter.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/formatter.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/gap_buffer.h \
+  C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/search_replace.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/undo_redo.h \
   C:/tools/msys64/mingw64/include/_mingw.h \
@@ -61,6 +62,8 @@ C:/tools/msys64/mingw64/include/string.h:
 
 C:/tools/msys64/mingw64/include/stdlib.h:
 
+C:/tools/msys64/mingw64/include/stddef.h:
+
 C:/tools/msys64/mingw64/include/_mingw_secapi.h:
 
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/undo_redo.h:
@@ -73,8 +76,6 @@ C:/tools/msys64/mingw64/include/_mingw_off_t.h:
 
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/exporter.h:
 
-C:/tools/msys64/mingw64/include/_mingw_stat64.h:
-
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stdbool.h:
 
 C:/tools/msys64/mingw64/include/_mingw_mac.h:
@@ -85,11 +86,17 @@ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/formatter.h:
 
 C:/tools/msys64/mingw64/include/_mingw.h:
 
+C:/tools/msys64/mingw64/include/corecrt_wctype.h:
+
+C:/tools/msys64/mingw64/include/limits.h:
+
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/src/main.c:
 
 C:/tools/msys64/mingw64/include/corecrt_wstdlib.h:
 
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/config.h:
+
+C:/tools/msys64/mingw64/include/_mingw_stat64.h:
 
 C:/tools/msys64/mingw64/include/corecrt.h:
 
@@ -105,11 +112,9 @@ C:/tools/msys64/mingw64/include/corecrt_stdio_config.h:
 
 C:/tools/msys64/mingw64/include/corecrt_wconio.h:
 
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h:
+
 C:/tools/msys64/mingw64/include/sec_api/stdio_s.h:
-
-C:/tools/msys64/mingw64/include/corecrt_wctype.h:
-
-C:/tools/msys64/mingw64/include/limits.h:
 
 C:/tools/msys64/mingw64/include/crtdefs.h:
 
@@ -120,5 +125,3 @@ C:/tools/msys64/mingw64/include/malloc.h:
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/search_replace.h:
 
 C:/tools/msys64/mingw64/include/sec_api/string_s.h:
-
-C:/tools/msys64/mingw64/include/stddef.h:

@@ -1,0 +1,2 @@
+C:\tools\msys64\mingw64\bin\ar.exe qc libeditor_api.a CMakeFiles/editor_api.dir/src/editor_api.c.obj
+C:\tools\msys64\mingw64\bin\ranlib.exe libeditor_api.a

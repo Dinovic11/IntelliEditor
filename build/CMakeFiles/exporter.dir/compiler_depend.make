@@ -5,6 +5,7 @@ CMakeFiles/exporter.dir/src/editor/exporter.c.obj: C:/Users/paisible/Work/Web/PE
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/encoding.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/exporter.h \
   C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/formatter.h \
+  C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h \
   C:/tools/msys64/mingw64/include/_mingw.h \
   C:/tools/msys64/mingw64/include/_mingw_mac.h \
   C:/tools/msys64/mingw64/include/_mingw_off_t.h \
@@ -58,6 +59,8 @@ C:/tools/msys64/mingw64/include/swprintf.inl:
 
 C:/tools/msys64/mingw64/include/string.h:
 
+C:/tools/msys64/mingw64/include/stdlib.h:
+
 C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stdint.h:
 
 C:/tools/msys64/mingw64/include/corecrt_memory.h:
@@ -76,15 +79,9 @@ C:/tools/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/16.1.0/include/stdbool.h:
 
 C:/tools/msys64/mingw64/include/_mingw_mac.h:
 
-C:/tools/msys64/mingw64/include/corecrt_wconio.h:
-
-C:/tools/msys64/mingw64/include/sec_api/stdio_s.h:
-
-C:/tools/msys64/mingw64/include/sec_api/wchar_s.h:
-
-C:/tools/msys64/mingw64/include/stdio.h:
-
 C:/tools/msys64/mingw64/include/_mingw.h:
+
+C:/tools/msys64/mingw64/include/limits.h:
 
 C:/tools/msys64/mingw64/include/sec_api/stdlib_s.h:
 
@@ -94,11 +91,17 @@ C:/tools/msys64/mingw64/include/corecrt_wstdlib.h:
 
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/src/editor/exporter.c:
 
-C:/tools/msys64/mingw64/include/limits.h:
+C:/tools/msys64/mingw64/include/corecrt_wconio.h:
+
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/memory.h:
+
+C:/tools/msys64/mingw64/include/sec_api/stdio_s.h:
+
+C:/tools/msys64/mingw64/include/sec_api/wchar_s.h:
+
+C:/tools/msys64/mingw64/include/stdio.h:
 
 C:/tools/msys64/mingw64/include/crtdefs.h:
-
-C:/tools/msys64/mingw64/include/stdlib.h:
 
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/include/formatter.h:
 
