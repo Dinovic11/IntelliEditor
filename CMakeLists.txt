@@ -27,6 +27,13 @@ add_library(config STATIC src/utils/config.c)
 add_library(editor_api STATIC src/editor_api.c)
 add_library(nlp_stub STATIC src/nlp_stub.c)
 
+# Ensure editor_api links its internal dependencies so other targets only need editor_api
+target_link_libraries(editor_api PRIVATE gap_buffer exporter search_replace memory encoding config)
+
+# Win32 UI prototype for Dev B
+add_executable(win32_demo src/ui_win32.c)
+target_link_libraries(win32_demo PRIVATE editor_api user32)
+
 # exécutable de test
 add_executable(main src/main.c)
 
