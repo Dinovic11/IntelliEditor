@@ -105,6 +105,12 @@ main.exe: libencoding.a
 main.exe: libconfig.a
 main.exe: libeditor_api.a
 main.exe: libnlp_stub.a
+main.exe: libgap_buffer.a
+main.exe: libexporter.a
+main.exe: libsearch_replace.a
+main.exe: libmemory.a
+main.exe: libencoding.a
+main.exe: libconfig.a
 main.exe: CMakeFiles/main.dir/linkLibs.rsp
 main.exe: CMakeFiles/main.dir/objects1.rsp
 main.exe: CMakeFiles/main.dir/link.txt

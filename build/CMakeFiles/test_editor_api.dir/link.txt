@@ -1,0 +1,3 @@
+C:\tools\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\test_editor_api.dir/objects.a
+C:\tools\msys64\mingw64\bin\ar.exe qc CMakeFiles\test_editor_api.dir/objects.a @CMakeFiles\test_editor_api.dir\objects1.rsp
+gcc -Wl,--whole-archive CMakeFiles\test_editor_api.dir/objects.a -Wl,--no-whole-archive -o test_editor_api.exe -Wl,--out-implib,libtest_editor_api.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\test_editor_api.dir\linkLibs.rsp

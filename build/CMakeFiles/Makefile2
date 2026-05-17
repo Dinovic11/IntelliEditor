@@ -72,6 +72,8 @@ all: CMakeFiles/encoding.dir/all
 all: CMakeFiles/config.dir/all
 all: CMakeFiles/editor_api.dir/all
 all: CMakeFiles/nlp_stub.dir/all
+all: CMakeFiles/win32_demo.dir/all
+all: CMakeFiles/test_editor_api.dir/all
 all: CMakeFiles/main.dir/all
 .PHONY : all
 
@@ -86,6 +88,8 @@ codegen: CMakeFiles/encoding.dir/codegen
 codegen: CMakeFiles/config.dir/codegen
 codegen: CMakeFiles/editor_api.dir/codegen
 codegen: CMakeFiles/nlp_stub.dir/codegen
+codegen: CMakeFiles/win32_demo.dir/codegen
+codegen: CMakeFiles/test_editor_api.dir/codegen
 codegen: CMakeFiles/main.dir/codegen
 .PHONY : codegen
 
@@ -104,6 +108,8 @@ clean: CMakeFiles/encoding.dir/clean
 clean: CMakeFiles/config.dir/clean
 clean: CMakeFiles/editor_api.dir/clean
 clean: CMakeFiles/nlp_stub.dir/clean
+clean: CMakeFiles/win32_demo.dir/clean
+clean: CMakeFiles/test_editor_api.dir/clean
 clean: CMakeFiles/main.dir/clean
 .PHONY : clean
 
@@ -146,7 +152,7 @@ CMakeFiles/gap_buffer.dir/clean:
 CMakeFiles/undo_redo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=21,22 "Built target undo_redo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=23,24 "Built target undo_redo"
 .PHONY : CMakeFiles/undo_redo.dir/all
 
 # Build rule for subdir invocation for target.
@@ -163,7 +169,7 @@ undo_redo: CMakeFiles/undo_redo.dir/rule
 # codegen rule for target.
 CMakeFiles/undo_redo.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\undo_redo.dir\build.make CMakeFiles/undo_redo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=21,22 "Finished codegen for target undo_redo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=23,24 "Finished codegen for target undo_redo"
 .PHONY : CMakeFiles/undo_redo.dir/codegen
 
 # clean rule for target.
@@ -367,7 +373,12 @@ CMakeFiles/config.dir/clean:
 # Target rules for target CMakeFiles/editor_api.dir
 
 # All Build rule for target.
-CMakeFiles/editor_api.dir/all:
+CMakeFiles/editor_api.dir/all: CMakeFiles/gap_buffer.dir/all
+CMakeFiles/editor_api.dir/all: CMakeFiles/exporter.dir/all
+CMakeFiles/editor_api.dir/all: CMakeFiles/search_replace.dir/all
+CMakeFiles/editor_api.dir/all: CMakeFiles/memory.dir/all
+CMakeFiles/editor_api.dir/all: CMakeFiles/encoding.dir/all
+CMakeFiles/editor_api.dir/all: CMakeFiles/config.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\editor_api.dir\build.make CMakeFiles/editor_api.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\editor_api.dir\build.make CMakeFiles/editor_api.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=3,4 "Built target editor_api"
@@ -375,7 +386,7 @@ CMakeFiles/editor_api.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/editor_api.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/editor_api.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 0
 .PHONY : CMakeFiles/editor_api.dir/rule
@@ -426,6 +437,82 @@ CMakeFiles/nlp_stub.dir/codegen:
 CMakeFiles/nlp_stub.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\nlp_stub.dir\build.make CMakeFiles/nlp_stub.dir/clean
 .PHONY : CMakeFiles/nlp_stub.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/win32_demo.dir
+
+# All Build rule for target.
+CMakeFiles/win32_demo.dir/all: CMakeFiles/gap_buffer.dir/all
+CMakeFiles/win32_demo.dir/all: CMakeFiles/exporter.dir/all
+CMakeFiles/win32_demo.dir/all: CMakeFiles/search_replace.dir/all
+CMakeFiles/win32_demo.dir/all: CMakeFiles/memory.dir/all
+CMakeFiles/win32_demo.dir/all: CMakeFiles/encoding.dir/all
+CMakeFiles/win32_demo.dir/all: CMakeFiles/config.dir/all
+CMakeFiles/win32_demo.dir/all: CMakeFiles/editor_api.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\win32_demo.dir\build.make CMakeFiles/win32_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\win32_demo.dir\build.make CMakeFiles/win32_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=25,26 "Built target win32_demo"
+.PHONY : CMakeFiles/win32_demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/win32_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/win32_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 0
+.PHONY : CMakeFiles/win32_demo.dir/rule
+
+# Convenience name for target.
+win32_demo: CMakeFiles/win32_demo.dir/rule
+.PHONY : win32_demo
+
+# codegen rule for target.
+CMakeFiles/win32_demo.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\win32_demo.dir\build.make CMakeFiles/win32_demo.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=25,26 "Finished codegen for target win32_demo"
+.PHONY : CMakeFiles/win32_demo.dir/codegen
+
+# clean rule for target.
+CMakeFiles/win32_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\win32_demo.dir\build.make CMakeFiles/win32_demo.dir/clean
+.PHONY : CMakeFiles/win32_demo.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_editor_api.dir
+
+# All Build rule for target.
+CMakeFiles/test_editor_api.dir/all: CMakeFiles/gap_buffer.dir/all
+CMakeFiles/test_editor_api.dir/all: CMakeFiles/exporter.dir/all
+CMakeFiles/test_editor_api.dir/all: CMakeFiles/search_replace.dir/all
+CMakeFiles/test_editor_api.dir/all: CMakeFiles/memory.dir/all
+CMakeFiles/test_editor_api.dir/all: CMakeFiles/encoding.dir/all
+CMakeFiles/test_editor_api.dir/all: CMakeFiles/config.dir/all
+CMakeFiles/test_editor_api.dir/all: CMakeFiles/editor_api.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_editor_api.dir\build.make CMakeFiles/test_editor_api.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_editor_api.dir\build.make CMakeFiles/test_editor_api.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=21,22 "Built target test_editor_api"
+.PHONY : CMakeFiles/test_editor_api.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_editor_api.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/test_editor_api.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles 0
+.PHONY : CMakeFiles/test_editor_api.dir/rule
+
+# Convenience name for target.
+test_editor_api: CMakeFiles/test_editor_api.dir/rule
+.PHONY : test_editor_api
+
+# codegen rule for target.
+CMakeFiles/test_editor_api.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_editor_api.dir\build.make CMakeFiles/test_editor_api.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\paisible\Work\Web\PERSO\IntelliEditor\build\CMakeFiles --progress-num=21,22 "Finished codegen for target test_editor_api"
+.PHONY : CMakeFiles/test_editor_api.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_editor_api.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_editor_api.dir\build.make CMakeFiles/test_editor_api.dir/clean
+.PHONY : CMakeFiles/test_editor_api.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/main.dir

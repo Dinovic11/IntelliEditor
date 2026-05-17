@@ -246,6 +246,32 @@ nlp_stub/fast:
 .PHONY : nlp_stub/fast
 
 #=============================================================================
+# Target rules for targets named win32_demo
+
+# Build rule for target.
+win32_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 win32_demo
+.PHONY : win32_demo
+
+# fast build rule for target.
+win32_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\win32_demo.dir\build.make CMakeFiles/win32_demo.dir/build
+.PHONY : win32_demo/fast
+
+#=============================================================================
+# Target rules for targets named test_editor_api
+
+# Build rule for target.
+test_editor_api: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_editor_api
+.PHONY : test_editor_api
+
+# fast build rule for target.
+test_editor_api/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_editor_api.dir\build.make CMakeFiles/test_editor_api.dir/build
+.PHONY : test_editor_api/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -450,6 +476,30 @@ src/nlp_stub.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\nlp_stub.dir\build.make CMakeFiles/nlp_stub.dir/src/nlp_stub.c.s
 .PHONY : src/nlp_stub.c.s
 
+src/ui_win32.obj: src/ui_win32.c.obj
+.PHONY : src/ui_win32.obj
+
+# target to build an object file
+src/ui_win32.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\win32_demo.dir\build.make CMakeFiles/win32_demo.dir/src/ui_win32.c.obj
+.PHONY : src/ui_win32.c.obj
+
+src/ui_win32.i: src/ui_win32.c.i
+.PHONY : src/ui_win32.i
+
+# target to preprocess a source file
+src/ui_win32.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\win32_demo.dir\build.make CMakeFiles/win32_demo.dir/src/ui_win32.c.i
+.PHONY : src/ui_win32.c.i
+
+src/ui_win32.s: src/ui_win32.c.s
+.PHONY : src/ui_win32.s
+
+# target to generate assembly for a file
+src/ui_win32.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\win32_demo.dir\build.make CMakeFiles/win32_demo.dir/src/ui_win32.c.s
+.PHONY : src/ui_win32.c.s
+
 src/utils/config.obj: src/utils/config.c.obj
 .PHONY : src/utils/config.obj
 
@@ -522,6 +572,30 @@ src/utils/memory.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\memory.dir\build.make CMakeFiles/memory.dir/src/utils/memory.c.s
 .PHONY : src/utils/memory.c.s
 
+tests/test_editor_api.obj: tests/test_editor_api.c.obj
+.PHONY : tests/test_editor_api.obj
+
+# target to build an object file
+tests/test_editor_api.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_editor_api.dir\build.make CMakeFiles/test_editor_api.dir/tests/test_editor_api.c.obj
+.PHONY : tests/test_editor_api.c.obj
+
+tests/test_editor_api.i: tests/test_editor_api.c.i
+.PHONY : tests/test_editor_api.i
+
+# target to preprocess a source file
+tests/test_editor_api.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_editor_api.dir\build.make CMakeFiles/test_editor_api.dir/tests/test_editor_api.c.i
+.PHONY : tests/test_editor_api.c.i
+
+tests/test_editor_api.s: tests/test_editor_api.c.s
+.PHONY : tests/test_editor_api.s
+
+# target to generate assembly for a file
+tests/test_editor_api.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_editor_api.dir\build.make CMakeFiles/test_editor_api.dir/tests/test_editor_api.c.s
+.PHONY : tests/test_editor_api.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -540,7 +614,9 @@ help:
 	@echo ... memory
 	@echo ... nlp_stub
 	@echo ... search_replace
+	@echo ... test_editor_api
 	@echo ... undo_redo
+	@echo ... win32_demo
 	@echo ... src/editor/exporter.obj
 	@echo ... src/editor/exporter.i
 	@echo ... src/editor/exporter.s
@@ -565,6 +641,9 @@ help:
 	@echo ... src/nlp_stub.obj
 	@echo ... src/nlp_stub.i
 	@echo ... src/nlp_stub.s
+	@echo ... src/ui_win32.obj
+	@echo ... src/ui_win32.i
+	@echo ... src/ui_win32.s
 	@echo ... src/utils/config.obj
 	@echo ... src/utils/config.i
 	@echo ... src/utils/config.s
@@ -574,6 +653,9 @@ help:
 	@echo ... src/utils/memory.obj
 	@echo ... src/utils/memory.i
 	@echo ... src/utils/memory.s
+	@echo ... tests/test_editor_api.obj
+	@echo ... tests/test_editor_api.i
+	@echo ... tests/test_editor_api.s
 .PHONY : help
 
 

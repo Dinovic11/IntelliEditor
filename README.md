@@ -22,3 +22,18 @@ Université Don Bosco de Lubumbashi – Année académique 2025–2026
 
 ## Licence
 (à définir)
+
+## Prototype Win32 (Dev B)
+
+Un prototype Win32 minimal est fourni pour démontrer l'utilisation de l'API de l'éditeur (`editor_api`). Il ouvre une fenêtre avec un contrôle d'édition multiligne et synchronise son contenu avec le noyau éditeur.
+
+Pour compiler et lancer le prototype :
+
+```powershell
+cd /c/Users/paisible/Work/Web/PERSO/IntelliEditor
+cmake --build build --config Release
+./build/win32_demo.exe
+```
+
+Le prototype est volontairement simple : il montre comment Dev B peut intégrer le `editor_api` sans connaître les détails internes du buffer.
+

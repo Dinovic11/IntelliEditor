@@ -8,6 +8,8 @@ C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/encoding.dir
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/config.dir
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/editor_api.dir
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/nlp_stub.dir
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/win32_demo.dir
+C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/test_editor_api.dir
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/main.dir
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/edit_cache.dir
 C:/Users/paisible/Work/Web/PERSO/IntelliEditor/build/CMakeFiles/rebuild_cache.dir

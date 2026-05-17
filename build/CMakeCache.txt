@@ -225,6 +225,9 @@ IntelliEditor_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 IntelliEditor_SOURCE_DIR:STATIC=C:/Users/paisible/Work/Web/PERSO/IntelliEditor
 
+//Dependencies for the target
+editor_api_LIB_DEPENDS:STATIC=general;gap_buffer;general;exporter;general;search_replace;general;memory;general;encoding;general;config;
+
 
 ########################
 # INTERNAL cache entries

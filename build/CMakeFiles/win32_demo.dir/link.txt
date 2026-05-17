@@ -1,0 +1,3 @@
+C:\tools\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\win32_demo.dir/objects.a
+C:\tools\msys64\mingw64\bin\ar.exe qc CMakeFiles\win32_demo.dir/objects.a @CMakeFiles\win32_demo.dir\objects1.rsp
+gcc -Wl,--whole-archive CMakeFiles\win32_demo.dir/objects.a -Wl,--no-whole-archive -o win32_demo.exe -Wl,--out-implib,libwin32_demo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\win32_demo.dir\linkLibs.rsp

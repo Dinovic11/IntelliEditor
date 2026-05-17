@@ -34,6 +34,10 @@ target_link_libraries(editor_api PRIVATE gap_buffer exporter search_replace memo
 add_executable(win32_demo src/ui_win32.c)
 target_link_libraries(win32_demo PRIVATE editor_api user32)
 
+# Unit tests for editor_api
+add_executable(test_editor_api tests/test_editor_api.c)
+target_link_libraries(test_editor_api PRIVATE editor_api)
+
 # exécutable de test
 add_executable(main src/main.c)
 

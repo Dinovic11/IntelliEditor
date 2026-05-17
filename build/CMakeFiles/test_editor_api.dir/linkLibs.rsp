@@ -1,0 +1,1 @@
+ libeditor_api.a libgap_buffer.a libexporter.a libsearch_replace.a libmemory.a libencoding.a libconfig.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
