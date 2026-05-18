@@ -118,6 +118,9 @@ static bool undo_redo_pop_snapshot(Snapshot *stack, size_t *count, Snapshot *out
     }
     *count -= 1;
     *out = stack[*count];
+    /* Transfer ownership of the text pointer: clear the slot to avoid double-free
+       or leaked allocations when the stack entry is left outside the active range. */
+    stack[*count].text = NULL;
     return true;
 }
 

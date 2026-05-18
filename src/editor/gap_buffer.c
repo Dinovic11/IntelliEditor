@@ -197,6 +197,25 @@ size_t gap_buffer_to_string(const GapBuffer *buffer, char *dest, size_t dest_siz
     size_t total_length = prefix_size + suffix_size;
 
     if (dest_size <= total_length) {
+        /* Not enough room to store the full text plus NUL. Copy as much as fits
+           (leaving space for the terminating NUL) and return the full required
+           length so callers can detect truncation. */
+        size_t to_copy = dest_size > 0 ? dest_size - 1 : 0;
+        size_t copied = 0;
+        /* copy prefix */
+        size_t cp = prefix_size < to_copy ? prefix_size : to_copy;
+        if (cp > 0) {
+            memcpy(dest, buffer->data, cp);
+            copied += cp;
+        }
+        /* copy suffix if space remains */
+        if (copied < to_copy && suffix_size > 0) {
+            size_t rem = to_copy - copied;
+            size_t cs = suffix_size < rem ? suffix_size : rem;
+            memcpy(dest + copied, buffer->data + buffer->gap_end, cs);
+            copied += cs;
+        }
+        dest[copied] = '\0';
         return total_length;
     }
 
