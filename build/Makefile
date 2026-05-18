@@ -284,6 +284,19 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named package
+
+# Build rule for target.
+package: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 package
+.PHONY : package
+
+# fast build rule for target.
+package/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\package.dir\build.make CMakeFiles/package.dir/build
+.PHONY : package/fast
+
 src/editor/exporter.obj: src/editor/exporter.c.obj
 .PHONY : src/editor/exporter.obj
 
@@ -604,6 +617,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... package
 	@echo ... config
 	@echo ... editor_api
 	@echo ... encoding

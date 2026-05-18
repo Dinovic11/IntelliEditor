@@ -37,6 +37,8 @@ cmake --build build --config Release
 
 Le prototype est volontairement simple : il montre comment Dev B peut intégrer le `editor_api` sans connaître les détails internes du buffer.
 
+> Note : le binaire `main.exe` est un test en ligne de commande et se termine immédiatement. Pour l’interface graphique installée, utilisez `win32_demo.exe` en local ou l’application installée `IntelliEditor.exe`.
+
 ### Test NLP / LLM
 
 Un exemple de flux NLP est également disponible via `main.exe` avec l'option `--nlp-test`.
@@ -49,4 +51,50 @@ cmake --build build --config Release
 ```
 
 Le stub `src/nlp_stub.c` est prévu pour être remplacé par la vraie implémentation LLM de Dev C.
+
+## Packaging
+
+Le dossier `installer/` contient le script Inno Setup `IntelliEditor.iss` et un script de packaging `build_package.bat`.
+
+Pour générer l’installateur, installez Inno Setup 6 et lancez l’un des deux scripts.
+
+- Depuis PowerShell ou CMD :
+
+```powershell
+cd C:\Users\paisible\Work\Web\PERSO\IntelliEditor\installer
+.\build_package.bat
+```
+
+- Depuis Git Bash :
+
+```bash
+cd /c/Users/paisible/Work/Web/PERSO/IntelliEditor/installer
+./build_package.sh
+```
+
+- Depuis la racine du projet avec CMake :
+
+```powershell
+cd C:\Users\paisible\Work\Web\PERSO\IntelliEditor
+cmake --build build --target package
+```
+
+Si Inno Setup est installé mais n’est pas trouvé automatiquement, définissez la variable d’environnement `INNO_SETUP_PATH` vers le dossier contenant `ISCC.exe` :
+
+```powershell
+setx INNO_SETUP_PATH "C:\Program Files (x86)\Inno Setup 6"
+```
+
+Si vous exécutez `build_package.bat` manuellement dans CMD avec un chemin contenant des espaces, utilisez cette syntaxe :
+
+```cmd
+set "INNO_SETUP_PATH=C:\Program Files (x86)\Inno Setup 6"
+build_package.bat
+```
+
+Puis redémarrez votre terminal si vous avez utilisé `setx`.
+
+```
+
+L’installateur généré sera placé dans le répertoire `build/`.
 

@@ -42,3 +42,10 @@ target_link_libraries(test_editor_api PRIVATE editor_api)
 add_executable(main src/main.c)
 
 target_link_libraries(main PRIVATE gap_buffer undo_redo formatter exporter search_replace memory encoding config editor_api nlp_stub)
+
+add_custom_target(package
+    COMMAND ${CMAKE_COMMAND} -E echo "Lancement du packaging Inno Setup..."
+    COMMAND ${CMAKE_COMMAND} -E chdir ${CMAKE_SOURCE_DIR}/installer cmd.exe /C build_package.bat
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/installer
+    COMMENT "Génère l'installateur Windows avec Inno Setup"
+)

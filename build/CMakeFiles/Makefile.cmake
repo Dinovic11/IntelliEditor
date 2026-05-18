@@ -64,4 +64,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/win32_demo.dir/DependInfo.cmake"
   "CMakeFiles/test_editor_api.dir/DependInfo.cmake"
   "CMakeFiles/main.dir/DependInfo.cmake"
+  "CMakeFiles/package.dir/DependInfo.cmake"
   )
