@@ -1,5 +1,4 @@
 # IntelliEditor
-Logiciel de traitement de texte intelligent en C (Projet C Avancé), fonctionnant entièrement hors ligne sous Windows.
 
 ## Contexte
 Projet académique – C Avancé (L3 Génie Logiciel)  
@@ -12,9 +11,9 @@ Université Don Bosco de Lubumbashi – Année académique 2025–2026
 - Assistance intelligente hors ligne (LLM embarqué)
 
 ## Équipe
-- DEV-A : Nom Prénom
-- DEV-B : Nom Prénom
-- DEV-C : Nom Prénom
+- DEV-A : SANGWA MBALE Sarah
+- DEV-B : KAPOYA MUTUNDUKA Barley
+- DEV-C : KAPINGA MBALA Rholsel
 - DEV-D : KAMBALE KULE VALI HALI Dinovic
 
 ## Compilation

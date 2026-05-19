@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "document_type": "academic_report",
+    "version": "1.0"
+  },
+  "rules": [
+    {
+      "id": "R1",
+      "category": "structure",
+      "description": "La section Introduction doit exister",
+      "severity": "error",
+      "check_type": "section_exists",
+      "target_section": "INTRODUCTION"
+    },
+    {
+      "id": "R2",
+      "category": "length",
+      "description": "Le document doit avoir au moins 300 mots",
+      "severity": "warning",
+      "check_type": "word_count_min",
+      "parameter": "300"
+    }
+  ]
+}
